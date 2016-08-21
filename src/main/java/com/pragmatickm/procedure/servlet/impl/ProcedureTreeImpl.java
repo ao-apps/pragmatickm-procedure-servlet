@@ -36,6 +36,7 @@ import com.semanticcms.core.servlet.CaptureLevel;
 import com.semanticcms.core.servlet.CapturePage;
 import com.semanticcms.core.servlet.CurrentNode;
 import com.semanticcms.core.servlet.PageIndex;
+import com.semanticcms.core.servlet.SemanticCMS;
 import com.semanticcms.core.servlet.impl.NavigationTreeImpl;
 import java.io.IOException;
 import java.io.Writer;
@@ -116,10 +117,16 @@ final public class ProcedureTreeImpl {
 		;
 
 		if(out!=null) {
+			SemanticCMS semanticCMS = SemanticCMS.getInstance(servletContext);
 			final String responseEncoding = response.getCharacterEncoding();
 			out.write("<li><a");
 			if(mainLinkToProcedure) {
-				out.write(" class=\"procedureLink\"");
+				String linkCssClass = semanticCMS.getLinkCssClass(procedures.get(0));
+				if(linkCssClass != null) {
+					out.write(" class=\"");
+					encodeTextInXhtmlAttribute(linkCssClass, out);
+					out.write('"');
+				}
 			}
 			out.write(" href=\"");
 			Integer index = pageIndex==null ? null : pageIndex.getPageIndex(pageRef);
@@ -156,7 +163,14 @@ final public class ProcedureTreeImpl {
 			if(!mainLinkToProcedure) {
 				if(!procedures.isEmpty()) {
 					for(Procedure procedure : procedures) {
-						out.write("\n<div><a class=\"procedureLink\" href=\"");
+						out.write("\n<div><a");
+						String linkCssClass = semanticCMS.getLinkCssClass(procedure);
+						if(linkCssClass != null) {
+							out.write(" class=\"");
+							encodeTextInXhtmlAttribute(linkCssClass, out);
+							out.write('"');
+						}
+						out.write(" href=\"");
 						if(index != null) {
 							out.write('#');
 							PageIndex.appendIdInPage(

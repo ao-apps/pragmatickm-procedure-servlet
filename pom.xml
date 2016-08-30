@@ -25,7 +25,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
 	<groupId>com.pragmatickm</groupId>
 	<artifactId>pragmatickm-procedure-servlet</artifactId>
-	<version>1.0-SNAPSHOT</version>
+	<version>1.0</version>
 	<packaging>jar</packaging>
 
 	<name>PragmaticKM Procedure Servlet</name>
@@ -40,7 +40,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 		<!--
 		<url>http://github.com/aoindustries/pragmatickm-procedure-servlet</url>
 		-->
-		<tag>HEAD</tag>
+		<tag>pragmatickm-procedure-servlet-1.0</tag>
 	</scm>
 
 	<dependencies>

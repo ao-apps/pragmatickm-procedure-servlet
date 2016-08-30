@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+pragmatickm-procedure-servlet - Procedures nested within SemanticCMS pages and elements in a Servlet environment.
+Copyright (C) 2016  AO Industries, Inc.
+    support@aoindustries.com
+    7262 Bull Pen Cir
+    Mobile, AL 36695
+
+This file is part of pragmatickm-procedure-servlet.
+
+pragmatickm-procedure-servlet is non-exclusive, non-transferable, non-redistributable.
+
+pragmatickm-procedure-servlet is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.pragmatickm</groupId>
+		<artifactId>pragmatickm-procedure</artifactId>
+		<version>1.0</version>
+	</parent>
+
+	<groupId>com.pragmatickm</groupId>
+	<artifactId>pragmatickm-procedure-servlet</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>PragmaticKM Procedure Servlet</name>
+	<url>https://pragmatickm.com/docs/pragmatickm-procedure-servlet/</url>
+	<description>Procedures nested within SemanticCMS pages and elements in a Servlet environment.</description>
+
+	<scm>
+		<!--
+		<connection>scm:git:git://github.com/aoindustries/pragmatickm-procedure-servlet.git</connection>
+		-->
+		<developerConnection>scm:git:ssh://private.cvs.aoindustries.com/var/git/pragmatickm-procedure-servlet</developerConnection>
+		<!--
+		<url>http://github.com/aoindustries/pragmatickm-procedure-servlet</url>
+		-->
+		<tag>HEAD</tag>
+	</scm>
+
+	<dependencies>
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-web-api</artifactId>
+			<version>6.0</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.aoindustries</groupId>
+			<artifactId>ao-encoding</artifactId>
+			<version>1.3</version>
+		</dependency>
+		<dependency>
+			<groupId>com.aoindustries</groupId>
+			<artifactId>ao-io-buffer</artifactId>
+			<version>1.3</version>
+		</dependency>
+		<dependency>
+			<groupId>com.aoindustries</groupId>
+			<artifactId>aocode-public</artifactId>
+			<version>1.6</version>
+		</dependency>
+		<dependency>
+			<groupId>com.pragmatickm</groupId>
+			<artifactId>pragmatickm-procedure-model</artifactId>
+			<version>1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.semanticcms</groupId>
+			<artifactId>semanticcms-core-model</artifactId>
+			<version>1.4</version>
+		</dependency>
+		<dependency>
+			<groupId>com.semanticcms</groupId>
+			<artifactId>semanticcms-core-servlet</artifactId>
+			<version>1.5</version>
+		</dependency>
+	</dependencies>
+</project>

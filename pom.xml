@@ -36,6 +36,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 	<name>PragmaticKM Procedure Servlet</name>
 	<url>https://pragmatickm.com/procedure/servlet/</url>
 	<description>Procedures nested within SemanticCMS pages and elements in a Servlet environment.</description>
+	<inceptionYear>2013</inceptionYear>
 
 	<scm>
 		<!--

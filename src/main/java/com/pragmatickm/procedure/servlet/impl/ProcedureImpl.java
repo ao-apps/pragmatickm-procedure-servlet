@@ -22,8 +22,8 @@
  */
 package com.pragmatickm.procedure.servlet.impl;
 
+import com.aoindustries.encoding.Coercion;
 import com.aoindustries.encoding.MediaWriter;
-import static com.aoindustries.encoding.TextInXhtmlAttributeEncoder.encodeTextInXhtmlAttribute;
 import static com.aoindustries.encoding.TextInXhtmlAttributeEncoder.textInXhtmlAttributeEncoder;
 import static com.aoindustries.encoding.TextInXhtmlEncoder.encodeTextInXhtml;
 import com.aoindustries.io.buffer.BufferResult;
@@ -40,7 +40,7 @@ final public class ProcedureImpl {
 		PageIndex pageIndex,
 		Writer out,
 		ElementContext context,
-		String style,
+		Object style,
 		Procedure procedure
 	) throws IOException {
 		out.write("<table id=\"");
@@ -53,7 +53,7 @@ final public class ProcedureImpl {
 		out.write("\" class=\"thinTable procedureTable\"");
 		if(style != null) {
 			out.write(" style=\"");
-			encodeTextInXhtmlAttribute(style, out);
+			Coercion.write(style, textInXhtmlAttributeEncoder, out);
 			out.write('"');
 		}
 		out.write(">\n"

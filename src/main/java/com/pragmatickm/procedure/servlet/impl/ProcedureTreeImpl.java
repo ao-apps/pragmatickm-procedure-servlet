@@ -27,6 +27,7 @@ import static com.aoindustries.encoding.TextInXhtmlAttributeEncoder.encodeTextIn
 import static com.aoindustries.encoding.TextInXhtmlAttributeEncoder.textInXhtmlAttributeEncoder;
 import static com.aoindustries.encoding.TextInXhtmlEncoder.encodeTextInXhtml;
 import com.aoindustries.net.UrlUtils;
+import static com.aoindustries.taglib.AttributeUtils.resolveValue;
 import com.pragmatickm.procedure.model.Procedure;
 import com.semanticcms.core.model.Element;
 import com.semanticcms.core.model.Node;
@@ -44,6 +45,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import javax.el.ELContext;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -232,12 +234,37 @@ final public class ProcedureTreeImpl {
 		Writer out,
 		Page root
 	) throws ServletException, IOException {
+		writeProcedureTree(
+			servletContext,
+			null,
+			request,
+			response,
+			out,
+			root
+		);
+	}
+
+	/**
+	 * @param out  optional, null if no output needs to be written
+	 * @param root  either Page of ValueExpression that returns Page
+	 */
+	public static void writeProcedureTree(
+		ServletContext servletContext,
+		ELContext elContext,
+		HttpServletRequest request,
+		HttpServletResponse response,
+		Writer out,
+		Object root
+	) throws ServletException, IOException {
 		// Get the current capture state
 		final CaptureLevel captureLevel = CaptureLevel.getCaptureLevel(request);
 		if(captureLevel.compareTo(CaptureLevel.META) >= 0) {
+			// Evaluate expressions
+			Page rootPage = resolveValue(root, Page.class, elContext);
+
 			// Filter by has procedures
 			final Set<PageRef> pagesWithProcedures = new HashSet<PageRef>();
-			findProcedures(servletContext, request, response, pagesWithProcedures, root);
+			findProcedures(servletContext, request, response, pagesWithProcedures, rootPage);
 
 			if(out != null) out.write("<ul>\n");
 			writePage(
@@ -248,7 +275,7 @@ final public class ProcedureTreeImpl {
 				pagesWithProcedures,
 				PageIndex.getCurrentPageIndex(request),
 				out,
-				root
+				rootPage
 			);
 			if(out != null) out.write("</ul>\n");
 		}

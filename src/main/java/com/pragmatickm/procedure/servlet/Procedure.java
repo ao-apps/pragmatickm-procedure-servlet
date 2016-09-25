@@ -90,8 +90,8 @@ public class Procedure extends Element<com.pragmatickm.procedure.model.Procedure
 		return this;
 	}
 
-	private String style;
-	public Procedure style(String style) {
+	private Object style;
+	public Procedure style(Object style) {
 		this.style = style;
 		return this;
 	}

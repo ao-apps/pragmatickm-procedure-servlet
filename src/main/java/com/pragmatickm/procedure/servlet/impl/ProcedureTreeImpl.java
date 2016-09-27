@@ -53,6 +53,7 @@ import javax.servlet.http.HttpServletResponse;
 
 final public class ProcedureTreeImpl {
 
+	// TODO: as traversal
 	private static boolean findProcedures(
 		ServletContext servletContext,
 		HttpServletRequest request,
@@ -214,6 +215,7 @@ final public class ProcedureTreeImpl {
 				out.write('\n');
 				out.write("<ul>\n");
 			}
+			// TODO: traversal
 			for(PageRef childRef : childPages) {
 				assert childRef.getBook() != null : "pagesWithProcedures does not contain anything from missing books";
 				Page child = CapturePage.capturePage(servletContext, request, response, childRef, CaptureLevel.META);

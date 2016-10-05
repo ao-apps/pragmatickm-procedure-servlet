@@ -57,13 +57,13 @@ final public class ProcedureImpl {
 			out.write('"');
 		}
 		out.write(">\n"
-				+ "<thead><tr><th class=\"procedureTableHeader\" colspan=\"4\"><div>");
+				+ "<thead><tr><th class=\"procedureTableHeader\"><div>");
 		encodeTextInXhtml(procedure.getLabel(), out);
 		out.write("</div></th></tr></thead>\n"
 				+ "<tbody>\n");
 		BufferResult body = procedure.getBody();
 		if(body.getLength() > 0) {
-			out.write("<tr><td colspan=\"4\">\n");
+			out.write("<tr><td>\n");
 			body.writeTo(new NodeBodyWriter(procedure, out, context));
 			out.write("\n</td></tr>\n");
 		}

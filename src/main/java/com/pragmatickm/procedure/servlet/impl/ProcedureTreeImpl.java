@@ -29,6 +29,7 @@ import static com.aoindustries.encoding.TextInXhtmlEncoder.encodeTextInXhtml;
 import com.aoindustries.net.UrlUtils;
 import static com.aoindustries.taglib.AttributeUtils.resolveValue;
 import com.pragmatickm.procedure.model.Procedure;
+import com.semanticcms.core.model.ChildRef;
 import com.semanticcms.core.model.Element;
 import com.semanticcms.core.model.Node;
 import com.semanticcms.core.model.Page;
@@ -37,6 +38,7 @@ import com.semanticcms.core.servlet.CaptureLevel;
 import com.semanticcms.core.servlet.CapturePage;
 import com.semanticcms.core.servlet.CurrentNode;
 import com.semanticcms.core.servlet.PageIndex;
+import com.semanticcms.core.servlet.PageUtils;
 import com.semanticcms.core.servlet.SemanticCMS;
 import com.semanticcms.core.servlet.impl.NavigationTreeImpl;
 import java.io.IOException;
@@ -68,10 +70,11 @@ final public class ProcedureTreeImpl {
 				break;
 			}
 		}
-		for(PageRef childRef : page.getChildPages()) {
+		for(ChildRef childRef : page.getChildRefs()) {
+			PageRef childPageRef = childRef.getPageRef();
 			// Child not in missing book
-			if(childRef.getBook() != null) {
-				Page child = CapturePage.capturePage(servletContext, request, response, childRef, CaptureLevel.META);
+			if(childPageRef.getBook() != null) {
+				Page child = CapturePage.capturePage(servletContext, request, response, childPageRef, CaptureLevel.META);
 				if(
 					findProcedures(
 						servletContext,
@@ -99,6 +102,7 @@ final public class ProcedureTreeImpl {
 		Set<PageRef> pagesWithProcedures,
 		PageIndex pageIndex,
 		Writer out,
+		PageRef parentPageRef,
 		Page page
 	) throws IOException, ServletException {
 		final PageRef pageRef = page.getPageRef();
@@ -156,7 +160,7 @@ final public class ProcedureTreeImpl {
 				}
 			}
 			out.write("\">");
-			encodeTextInXhtml(page.getShortTitle(), out);
+			encodeTextInXhtml(PageUtils.getShortTitle(parentPageRef, page), out);
 			if(index != null) {
 				out.write("<sup>[");
 				encodeTextInXhtml(Integer.toString(index+1), out);
@@ -206,20 +210,21 @@ final public class ProcedureTreeImpl {
 				}
 			}
 		}
-		List<PageRef> childPages = NavigationTreeImpl.filterChildren(
-			page.getChildPages(),
+		List<ChildRef> childRefs = NavigationTreeImpl.filterPages(
+			page.getChildRefs(),
 			pagesWithProcedures
 		);
-		if(!childPages.isEmpty()) {
+		if(!childRefs.isEmpty()) {
 			if(out!=null) {
 				out.write('\n');
 				out.write("<ul>\n");
 			}
 			// TODO: traversal
-			for(PageRef childRef : childPages) {
-				assert childRef.getBook() != null : "pagesWithProcedures does not contain anything from missing books";
-				Page child = CapturePage.capturePage(servletContext, request, response, childRef, CaptureLevel.META);
-				writePage(servletContext, request, response, currentNode, pagesWithProcedures, pageIndex, out, child);
+			for(ChildRef childRef : childRefs) {
+				PageRef childPageRef = childRef.getPageRef();
+				assert childPageRef.getBook() != null : "pagesWithProcedures does not contain anything from missing books";
+				Page child = CapturePage.capturePage(servletContext, request, response, childPageRef, CaptureLevel.META);
+				writePage(servletContext, request, response, currentNode, pagesWithProcedures, pageIndex, out, pageRef, child);
 			}
 			if(out!=null) out.write("</ul>\n");
 		}
@@ -277,6 +282,7 @@ final public class ProcedureTreeImpl {
 				pagesWithProcedures,
 				PageIndex.getCurrentPageIndex(request),
 				out,
+				null,
 				rootPage
 			);
 			if(out != null) out.write("</ul>\n");

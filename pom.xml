@@ -34,13 +34,12 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 	<packaging>jar</packaging>
 
 	<properties>
-		<bookPath>/procedure/servlet</bookPath>
 		<shortTitle>Servlet</shortTitle>
 		<description.html><![CDATA[Procedures nested within <a target="_top" href="https://semanticcms.com/">SemanticCMS</a> pages and elements in a Servlet environment.]]></description.html>
 	</properties>
 
 	<name>PragmaticKM Procedure Servlet</name>
-	<url>https://pragmatickm.com${bookPath}/</url><!-- Can't inherit due to multi-module -->
+	<url>https://pragmatickm.com/procedure/servlet/</url>
 	<description>Procedures nested within SemanticCMS pages and elements in a Servlet environment.</description>
 	<inceptionYear>2013</inceptionYear>
 

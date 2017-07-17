@@ -1,6 +1,6 @@
 /*
  * pragmatickm-procedure-servlet - Procedures nested within SemanticCMS pages and elements in a Servlet environment.
- * Copyright (C) 2014, 2015, 2016  AO Industries, Inc.
+ * Copyright (C) 2014, 2015, 2016, 2017  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -43,14 +43,39 @@ public class Procedure extends Element<com.pragmatickm.procedure.model.Procedure
 	public Procedure(
 		ServletContext servletContext,
 		HttpServletRequest request,
-		HttpServletResponse response
+		HttpServletResponse response,
+		com.pragmatickm.procedure.model.Procedure element
 	) {
 		super(
 			servletContext,
 			request,
 			response,
+			element
+		);
+	}
+
+	public Procedure(
+		ServletContext servletContext,
+		HttpServletRequest request,
+		HttpServletResponse response
+	) {
+		this(
+			servletContext,
+			request,
+			response,
 			new com.pragmatickm.procedure.model.Procedure()
 		);
+	}
+
+	public Procedure(
+		ServletContext servletContext,
+		HttpServletRequest request,
+		HttpServletResponse response,
+		com.pragmatickm.procedure.model.Procedure element,
+		String label
+	) {
+		this(servletContext, request, response, element);
+		element.setLabel(label);
 	}
 
 	public Procedure(
@@ -68,12 +93,37 @@ public class Procedure extends Element<com.pragmatickm.procedure.model.Procedure
 	 *
 	 * @see  PageContext
 	 */
+	public Procedure(com.pragmatickm.procedure.model.Procedure element) {
+		this(
+			PageContext.getServletContext(),
+			PageContext.getRequest(),
+			PageContext.getResponse(),
+			element
+		);
+	}
+
+	/**
+	 * Creates a new procedure in the current page context.
+	 *
+	 * @see  PageContext
+	 */
 	public Procedure() {
 		this(
 			PageContext.getServletContext(),
 			PageContext.getRequest(),
 			PageContext.getResponse()
 		);
+	}
+
+	/**
+	 * @see  #Procedure()
+	 */
+	public Procedure(
+		com.pragmatickm.procedure.model.Procedure element,
+		String label
+	) {
+		this(element);
+		element.setLabel(label);
 	}
 
 	/**

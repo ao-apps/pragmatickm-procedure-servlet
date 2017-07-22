@@ -5,8 +5,8 @@ Procedures nested within [SemanticCMS](https://semanticcms.com/) pages and eleme
 * [Project Home](https://pragmatickm.com/procedure/servlet/)
 * [Changelog](https://pragmatickm.com/procedure/servlet/changelog)
 * [API Docs](https://pragmatickm.com/procedure/servlet/apidocs/)
-* [Maven Repository](scpexe://private.cvs.aoindustries.com/var/maven2/pragmatickm)
-* [Git](ssh://private.cvs.aoindustries.com/var/git/pragmatickm-procedure-servlet)
+* [Maven Central Repository](https://search.maven.org/#search%7Cgav%7C1%7Cg:%22com.pragmatickm%22%20AND%20a:%22pragmatickm-procedure-servlet%22)
+* [GitHub](https://github.com/aoindustries/pragmatickm-procedure-servlet)
 
 ## Contact Us
 For questions or support, please [contact us](https://aoindustries.com/contact):

@@ -27,7 +27,7 @@ along with pragmatickm-procedure-servlet.  If not, see <http://www.gnu.org/licen
 	<parent>
 		<groupId>com.pragmatickm</groupId>
 		<artifactId>pragmatickm-parent</artifactId>
-		<version>1.0.2-SNAPSHOT</version>
+		<version>1.0.2</version>
 		<relativePath>../../../parent/pom.xml</relativePath>
 	</parent>
 

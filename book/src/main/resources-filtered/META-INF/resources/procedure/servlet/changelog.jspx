@@ -61,7 +61,6 @@ along with pragmatickm-procedure-servlet.  If not, see <http://www.gnu.org/licen
 			datePublished="2017-07-27T00:09:03-0500"
 			groupId="@{documented.groupId}"
 			artifactId="@{documented.artifactId}"
-			repository="https://aorepo.org/maven2"
 			scmUrl="@{documented.scm.url}"
 		>
 			<ul>

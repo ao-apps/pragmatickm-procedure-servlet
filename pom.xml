@@ -128,7 +128,7 @@ along with pragmatickm-procedure-servlet.  If not, see <http://www.gnu.org/licen
 		<dependency>
 			<groupId>com.pragmatickm</groupId>
 			<artifactId>pragmatickm-procedure-model</artifactId>
-			<version>1.3.4-SNAPSHOT</version>
+			<version>1.3.4</version>
 		</dependency>
 		<dependency>
 			<groupId>com.semanticcms</groupId>

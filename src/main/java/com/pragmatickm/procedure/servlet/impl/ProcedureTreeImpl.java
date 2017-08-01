@@ -1,6 +1,6 @@
 /*
  * pragmatickm-procedure-servlet - Procedures nested within SemanticCMS pages and elements in a Servlet environment.
- * Copyright (C) 2014, 2015, 2016  AO Industries, Inc.
+ * Copyright (C) 2014, 2015, 2016, 2017  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -70,21 +70,25 @@ final public class ProcedureTreeImpl {
 				break;
 			}
 		}
-		for(ChildRef childRef : page.getChildRefs()) {
-			PageRef childPageRef = childRef.getPageRef();
-			// Child not in missing book
-			if(childPageRef.getBook() != null) {
-				Page child = CapturePage.capturePage(servletContext, request, response, childPageRef, CaptureLevel.META);
-				if(
-					findProcedures(
-						servletContext,
-						request,
-						response,
-						pagesWithProcedures,
-						child
-					)
-				) {
-					hasProcedure = true;
+		Set<ChildRef> childRefs = page.getChildRefs();
+		if(!childRefs.isEmpty()) {
+			SemanticCMS semanticCMS = SemanticCMS.getInstance(servletContext);
+			for(ChildRef childRef : childRefs) {
+				PageRef childPageRef = childRef.getPageRef();
+				// Child is in an accessible book
+				if(semanticCMS.getBook(childPageRef.getBookRef()).isAccessible()) {
+					Page child = CapturePage.capturePage(servletContext, request, response, childPageRef, CaptureLevel.META);
+					if(
+						findProcedures(
+							servletContext,
+							request,
+							response,
+							pagesWithProcedures,
+							child
+						)
+					) {
+						hasProcedure = true;
+					}
 				}
 			}
 		}
@@ -222,7 +226,10 @@ final public class ProcedureTreeImpl {
 			// TODO: traversal
 			for(ChildRef childRef : childRefs) {
 				PageRef childPageRef = childRef.getPageRef();
-				assert childPageRef.getBook() != null : "pagesWithProcedures does not contain anything from missing books";
+				assert
+					SemanticCMS.getInstance(servletContext).getBook(childPageRef.getBookRef()).isAccessible()
+					: "pagesWithProcedures does not contain anything from missing books"
+				;
 				Page child = CapturePage.capturePage(servletContext, request, response, childPageRef, CaptureLevel.META);
 				writePage(servletContext, request, response, currentNode, pagesWithProcedures, pageIndex, out, pageRef, child);
 			}

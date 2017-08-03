@@ -29,6 +29,7 @@ import static com.aoindustries.encoding.TextInXhtmlEncoder.encodeTextInXhtml;
 import com.aoindustries.net.UrlUtils;
 import static com.aoindustries.taglib.AttributeUtils.resolveValue;
 import com.pragmatickm.procedure.model.Procedure;
+import com.semanticcms.core.model.BookRef;
 import com.semanticcms.core.model.ChildRef;
 import com.semanticcms.core.model.Element;
 import com.semanticcms.core.model.Node;
@@ -140,6 +141,7 @@ final public class ProcedureTreeImpl {
 				}
 			}
 			out.write(" href=\"");
+			BookRef bookRef = pageRef.getBookRef();
 			Integer index = pageIndex==null ? null : pageIndex.getPageIndex(pageRef);
 			if(index != null) {
 				out.write('#');
@@ -152,7 +154,7 @@ final public class ProcedureTreeImpl {
 				encodeTextInXhtmlAttribute(
 					response.encodeURL(
 						UrlUtils.encodeUrlPath(
-							request.getContextPath() + pageRef.getServletPath(),
+							request.getContextPath() + bookRef.getPrefix() + pageRef.getPath(),
 							responseEncoding
 						)
 					),
@@ -193,7 +195,7 @@ final public class ProcedureTreeImpl {
 							encodeTextInXhtmlAttribute(
 								response.encodeURL(
 									UrlUtils.encodeUrlPath(
-										request.getContextPath() + pageRef.getServletPath(),
+										request.getContextPath() + bookRef.getPrefix() + pageRef.getPath(),
 										responseEncoding
 									)
 								),

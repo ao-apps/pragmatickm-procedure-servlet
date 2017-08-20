@@ -37,7 +37,7 @@ along with pragmatickm-procedure-servlet.  If not, see <http://www.gnu.org/licen
 		shortTitle="Changelog"
 		tocLevels="1"
 		datePublished="2017-07-25T18:14:05-0500"
-		dateModified="2017-08-03T11:35:29-0500"
+		dateModified="2017-08-19T19:31:43-0500"
 	>
 		<!-- The current snapshot, unreleased version -->
 		<c:set var="version" value="@{com.pragmatickm:pragmatickm-procedure-servlet:pom.version}" />
@@ -55,7 +55,7 @@ along with pragmatickm-procedure-servlet.  If not, see <http://www.gnu.org/licen
 				scmUrl="@{documented.scm.url}"
 			>
 				<ul>
-					<li>Added <ao:a href="https://semanticcms.com/core/repository/">SemanticCMS Core Repository</ao:a> repository support.</li>
+					<li>Added <ao:a href="https://semanticcms.com/core/pages/">SemanticCMS Core Pages</ao:a> support.</li>
 				</ul>
 			</changelog:release>
 		</c:if>

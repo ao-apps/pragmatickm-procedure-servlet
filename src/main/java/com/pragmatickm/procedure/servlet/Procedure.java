@@ -25,7 +25,7 @@ package com.pragmatickm.procedure.servlet;
 import com.pragmatickm.procedure.servlet.impl.ProcedureImpl;
 import com.semanticcms.core.model.ElementContext;
 import com.semanticcms.core.model.Page;
-import com.semanticcms.core.servlet.CaptureLevel;
+import com.semanticcms.core.pages.CaptureLevel;
 import com.semanticcms.core.servlet.CurrentPage;
 import com.semanticcms.core.servlet.Element;
 import com.semanticcms.core.servlet.PageContext;

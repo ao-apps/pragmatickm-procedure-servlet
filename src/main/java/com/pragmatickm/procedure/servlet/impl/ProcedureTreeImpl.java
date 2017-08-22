@@ -35,8 +35,9 @@ import com.semanticcms.core.model.Element;
 import com.semanticcms.core.model.Node;
 import com.semanticcms.core.model.Page;
 import com.semanticcms.core.model.PageRef;
-import com.semanticcms.core.servlet.CaptureLevel;
+import com.semanticcms.core.pages.CaptureLevel;
 import com.semanticcms.core.servlet.CapturePage;
+import com.semanticcms.core.servlet.CurrentCaptureLevel;
 import com.semanticcms.core.servlet.CurrentNode;
 import com.semanticcms.core.servlet.PageIndex;
 import com.semanticcms.core.servlet.PageUtils;
@@ -273,7 +274,7 @@ final public class ProcedureTreeImpl {
 		Object root
 	) throws ServletException, IOException {
 		// Get the current capture state
-		final CaptureLevel captureLevel = CaptureLevel.getCaptureLevel(request);
+		final CaptureLevel captureLevel = CurrentCaptureLevel.getCaptureLevel(request);
 		if(captureLevel.compareTo(CaptureLevel.META) >= 0) {
 			// Evaluate expressions
 			Page rootPage = resolveValue(root, Page.class, elContext);

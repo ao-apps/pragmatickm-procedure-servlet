@@ -37,7 +37,7 @@ along with pragmatickm-procedure-servlet.  If not, see <http://www.gnu.org/licen
 		<documented.groupId>com.pragmatickm</documented.groupId><documented.artifactId>pragmatickm-procedure-servlet</documented.artifactId>
 		<documented.javaVersion>1.7</documented.javaVersion>
 		<documented.javac.link.javaApi>${javac.link.javaApi.jdk7}</documented.javac.link.javaApi>
-		<documented.name>PragmaticKM 1 Procedure Servlet</documented.name>
+		<documented.name>PragmaticKM Procedure Servlet</documented.name>
 		<documented.shortTitle>Servlet</documented.shortTitle>
 		<documented.url>https://pragmatickm.com/procedure/servlet/</documented.url>
 		<documented.description>Procedures nested within SemanticCMS pages and elements in a Servlet environment.</documented.description>

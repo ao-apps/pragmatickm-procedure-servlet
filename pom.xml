@@ -64,13 +64,13 @@ along with pragmatickm-procedure-servlet.  If not, see <http://www.gnu.org/licen
 							<links>
 								<link>${javac.link.javaApi}</link>
 								<link>${javac.link.javaeeApi.6}</link>
-								<link>https://pragmatickm.com/procedure/model/apidocs</link>
-								<link>https://pragmatickm.com/procedure/renderer/html/apidocs</link>
-								<link>https://semanticcms.com/core/model/apidocs</link>
-								<link>https://semanticcms.com/core/pages/apidocs</link>
-								<link>https://semanticcms.com/core/pages/local/apidocs</link>
-								<link>https://semanticcms.com/core/renderer/html/apidocs</link>
-								<link>https://semanticcms.com/core/servlet/apidocs</link>
+								<link>https://pragmatickm.com/procedure/model/apidocs/</link>
+								<link>https://pragmatickm.com/procedure/renderer/html/apidocs/</link>
+								<link>https://semanticcms.com/core/model/apidocs/</link>
+								<link>https://semanticcms.com/core/pages/apidocs/</link>
+								<link>https://semanticcms.com/core/pages/local/apidocs/</link>
+								<link>https://semanticcms.com/core/renderer/html/apidocs/</link>
+								<link>https://semanticcms.com/core/servlet/apidocs/</link>
 							</links>
 						</configuration>
 					</plugin>

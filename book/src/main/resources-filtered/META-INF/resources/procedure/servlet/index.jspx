@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 pragmatickm-procedure-servlet - Procedures nested within SemanticCMS pages and elements in a Servlet environment.
-Copyright (C) 2017  AO Industries, Inc.
+Copyright (C) 2017, 2019  AO Industries, Inc.
     support@aoindustries.com
     7262 Bull Pen Cir
     Mobile, AL 36695
@@ -34,19 +34,22 @@ along with pragmatickm-procedure-servlet.  If not, see <http://www.gnu.org/licen
 		shortTitle="@{documented.shortTitle}"
 		description="@{documented.description}"
 		datePublished="2017-07-25T18:14:05-0500"
+		dateModified="2019-06-01T00:46:53-0500"
 	>
 		<core:child page="changelog.jspx" />
 		<core:child page="apidocs/index.jspx" />
-		<ao:include
-			page="/ao-badges/badges.inc.jspx"
-			arg.projectStatus="${currentPage.property.projectStatus}"
-			arg.managementStatus="${currentPage.property.managementStatus}"
-			arg.packagingStatus="${currentPage.property.packagingStatus}"
-			arg.javaVersion="${currentPage.property.javaVersion}"
-			arg.javaeeVersion="${currentPage.property.javaeeVersion}"
-			arg.semanticVersioning="${currentPage.property.semanticVersioning}"
-			arg.license="${currentPage.property.license}"
-		/>
+		<header>
+			<ao:include
+				page="/ao-badges/badges.inc.jspx"
+				arg.projectStatus="${currentPage.property.projectStatus}"
+				arg.managementStatus="${currentPage.property.managementStatus}"
+				arg.packagingStatus="${currentPage.property.packagingStatus}"
+				arg.javaVersion="${currentPage.property.javaVersion}"
+				arg.javaeeVersion="${currentPage.property.javaeeVersion}"
+				arg.semanticVersioning="${currentPage.property.semanticVersioning}"
+				arg.license="${currentPage.property.license}"
+			/>
+		</header>
 		<p>
 			Procedures nested within <ao:a href="https://semanticcms.com/">SemanticCMS</ao:a> pages and elements in a Servlet environment.
 		</p>

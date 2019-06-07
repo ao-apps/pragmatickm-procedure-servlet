@@ -1,6 +1,6 @@
 /*
  * pragmatickm-procedure-servlet - Procedures nested within SemanticCMS pages and elements in a Servlet environment.
- * Copyright (C) 2014, 2015, 2016  AO Industries, Inc.
+ * Copyright (C) 2014, 2015, 2016, 2019  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -110,7 +110,7 @@ final public class ProcedureTreeImpl {
 			// Add page links
 			currentNode.addPageLink(pageRef);
 		}
-		List<Procedure> procedures = new ArrayList<Procedure>();
+		List<Procedure> procedures = new ArrayList<>();
 		for(Element element : page.getElements()) {
 			if(element instanceof Procedure) procedures.add((Procedure)element);
 		}
@@ -270,7 +270,7 @@ final public class ProcedureTreeImpl {
 			Page rootPage = resolveValue(root, Page.class, elContext);
 
 			// Filter by has procedures
-			final Set<PageRef> pagesWithProcedures = new HashSet<PageRef>();
+			final Set<PageRef> pagesWithProcedures = new HashSet<>();
 			findProcedures(servletContext, request, response, pagesWithProcedures, rootPage);
 
 			if(out != null) out.write("<ul>\n");

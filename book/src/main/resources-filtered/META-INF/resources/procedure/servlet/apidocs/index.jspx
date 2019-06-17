@@ -39,5 +39,4 @@ along with pragmatickm-procedure-servlet.  If not, see <http://www.gnu.org/licen
 		datePublished="2017-07-25T18:14:05-0500"
 		dateModified="${ao:getLastModified('index.html')}"
 	/>
-	<!-- TODO: Pick-up javadocs version, not pom version, in title, here and elsewhere -->
 </jsp:root>

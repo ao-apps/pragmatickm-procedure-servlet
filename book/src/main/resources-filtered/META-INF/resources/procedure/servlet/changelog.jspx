@@ -36,7 +36,7 @@ along with pragmatickm-procedure-servlet.  If not, see <http://www.gnu.org/licen
 		shortTitle="Changelog"
 		tocLevels="1"
 		datePublished="2017-07-25T18:14:05-0500"
-		dateModified="2019-06-24T00:19:07-0500"
+		dateModified="2019-09-30T09:05:38-0500"
 	>
 		<!-- The current snapshot, unreleased version -->
 		<c:set var="version" value="@{com.pragmatickm:pragmatickm-procedure-servlet:pom.version}" />
@@ -51,7 +51,11 @@ along with pragmatickm-procedure-servlet.  If not, see <http://www.gnu.org/licen
 				groupId="@{documented.groupId}"
 				artifactId="@{documented.artifactId}"
 				scmUrl="@{documented.scm.url}"
-			/>
+			>
+				<ul>
+					<li>Updated dependencies.</li>
+				</ul>
+			</changelog:release>
 		</c:if>
 
 		<changelog:release

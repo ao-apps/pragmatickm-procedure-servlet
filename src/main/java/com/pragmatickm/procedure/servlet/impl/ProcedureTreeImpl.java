@@ -142,8 +142,8 @@ final public class ProcedureTreeImpl {
 						index,
 						mainLinkToProcedure ? procedures.get(0).getId() : null
 					),
-					out,
-					textInXhtmlAttributeEncoder
+					textInXhtmlAttributeEncoder,
+					out
 				);
 			} else {
 				encodeTextInXhtmlAttribute(
@@ -156,7 +156,7 @@ final public class ProcedureTreeImpl {
 				);
 				if(mainLinkToProcedure) {
 					encodeTextInXhtmlAttribute('#', out);
-					URIEncoder.encodeURIComponent(procedures.get(0).getId(), out, textInXhtmlAttributeEncoder);
+					URIEncoder.encodeURIComponent(procedures.get(0).getId(), textInXhtmlAttributeEncoder, out);
 				}
 			}
 			out.write("\">");
@@ -185,8 +185,8 @@ final public class ProcedureTreeImpl {
 									index,
 									procedure.getId()
 								),
-								out,
-								textInXhtmlAttributeEncoder
+								textInXhtmlAttributeEncoder,
+								out
 							);
 						} else {
 							encodeTextInXhtmlAttribute(
@@ -199,7 +199,7 @@ final public class ProcedureTreeImpl {
 							);
 							// TODO: Include all anchors inside response.encodeURL
 							encodeTextInXhtmlAttribute('#', out);
-							URIEncoder.encodeURIComponent(procedure.getId(), out, textInXhtmlAttributeEncoder);
+							URIEncoder.encodeURIComponent(procedure.getId(), textInXhtmlAttributeEncoder, out);
 						}
 						out.write("\">");
 						encodeTextInXhtml(procedure.getLabel(), out);

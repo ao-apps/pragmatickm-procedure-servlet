@@ -36,7 +36,7 @@ along with pragmatickm-procedure-servlet.  If not, see <http://www.gnu.org/licen
 		shortTitle="Changelog"
 		tocLevels="1"
 		datePublished="2017-07-25T18:14:05-0500"
-		dateModified="2019-10-12T07:46:33-0500"
+		dateModified="2019-11-02T16:41:06-0500"
 	>
 		<!-- The current snapshot, unreleased version -->
 		<c:set var="version" value="@{com.pragmatickm:pragmatickm-procedure-servlet:pom.version}" />
@@ -54,6 +54,7 @@ along with pragmatickm-procedure-servlet.  If not, see <http://www.gnu.org/licen
 			>
 				<ul>
 					<li>Added <ao:a href="https://semanticcms.com/core/pages/">SemanticCMS Core Pages</ao:a> support.</li>
+					<li>Minimum Java version changed from 1.7 to 1.8.</li>
 				</ul>
 			</changelog:release>
 		</c:if>

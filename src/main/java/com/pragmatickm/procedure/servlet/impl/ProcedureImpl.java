@@ -49,7 +49,7 @@ final public class ProcedureImpl {
 			procedure.getId(),
 			new MediaWriter(textInXhtmlAttributeEncoder, html.out)
 		);
-		html.out.write("\" class=\"thinTable procedureTable\"");
+		html.out.write("\" class=\"ao-grid procedureTable\"");
 		if(style != null) {
 			html.out.write(" style=\"");
 			Coercion.write(style, textInXhtmlAttributeEncoder, html.out);

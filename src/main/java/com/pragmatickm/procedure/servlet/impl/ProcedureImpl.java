@@ -49,14 +49,14 @@ final public class ProcedureImpl {
 			procedure.getId(),
 			new MediaWriter(textInXhtmlAttributeEncoder, html.out)
 		);
-		html.out.write("\" class=\"ao-grid procedureTable\"");
+		html.out.write("\" class=\"ao-grid pragmatickm-procedure\"");
 		if(style != null) {
 			html.out.write(" style=\"");
 			Coercion.write(style, textInXhtmlAttributeEncoder, html.out);
 			html.out.write('"');
 		}
 		html.out.write(">\n"
-				+ "<thead><tr><th class=\"procedureTableHeader\"><div>");
+				+ "<thead><tr><th><div>");
 		html.text(procedure.getLabel());
 		html.out.write("</div></th></tr></thead>\n"
 				+ "<tbody>\n");

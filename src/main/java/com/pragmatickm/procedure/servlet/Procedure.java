@@ -169,7 +169,7 @@ public class Procedure extends Element<com.pragmatickm.procedure.model.Procedure
 	public void writeTo(Writer out, ElementContext context) throws IOException, ServletException, SkipPageException {
 		ProcedureHtmlRenderer.writeProcedureTable(
 			pageIndex,
-			HtmlEE.get(servletContext, request, out),
+			HtmlEE.get(servletContext, request, response, out),
 			context,
 			style,
 			element

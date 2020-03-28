@@ -53,6 +53,11 @@ along with pragmatickm-procedure-servlet.  If not, see <http://www.gnu.org/licen
 		<tag>HEAD</tag>
 	</scm>
 
+	<issueManagement>
+		<system>GitHub Issues</system>
+		<url>https://github.com/aoindustries/pragmatickm-procedure-servlet/issues</url>
+	</issueManagement>
+
 	<profiles>
 		<profile>
 			<id>release</id>

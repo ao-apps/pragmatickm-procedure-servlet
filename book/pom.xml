@@ -29,7 +29,7 @@ along with pragmatickm-procedure-servlet.  If not, see <http://www.gnu.org/licen
 		<relativePath>../../../parent/pom.xml</relativePath>
 	</parent>
 
-	<groupId>com.pragmatickm</groupId><artifactId>pragmatickm-procedure-servlet-book</artifactId><version>1.5.0-SNAPSHOT</version>
+	<groupId>com.pragmatickm</groupId><artifactId>pragmatickm-procedure-servlet-book</artifactId><version>1.5.0</version>
 	<packaging>bundle</packaging>
 
 	<properties>
@@ -51,7 +51,7 @@ along with pragmatickm-procedure-servlet.  If not, see <http://www.gnu.org/licen
 		<connection>scm:git:git://github.com/aoindustries/pragmatickm-procedure-servlet.git</connection>
 		<developerConnection>scm:git:git@github.com:aoindustries/pragmatickm-procedure-servlet.git</developerConnection>
 		<url>https://github.com/aoindustries/pragmatickm-procedure-servlet</url>
-		<tag>HEAD</tag>
+		<tag>pragmatickm-procedure-servlet-book-1.5.0</tag>
 	</scm>
 
 	<issueManagement>

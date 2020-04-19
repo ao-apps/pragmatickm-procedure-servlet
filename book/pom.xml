@@ -39,7 +39,7 @@ along with pragmatickm-procedure-servlet.  If not, see <http://www.gnu.org/licen
 		<documented.shortTitle>Servlet</documented.shortTitle>
 		<documented.description>Procedures nested within SemanticCMS pages and elements in a Servlet environment.</documented.description>
 
-		<description.html><![CDATA[Documentation for <a target="_top" href="${project.url}">${documented.name}</a> in <a target="_top" href="https://semanticcms.com/">SemanticCMS</a> format.]]></description.html>
+		<description.html><![CDATA[Documentation for <a target="${javadoc.target}" href="${project.url}">${documented.name}</a> in <a target="${javadoc.target}" href="https://semanticcms.com/">SemanticCMS</a> format.]]></description.html>
 	</properties>
 
 	<name>PragmaticKM Procedure Servlet² Book</name>

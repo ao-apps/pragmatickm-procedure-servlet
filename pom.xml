@@ -25,7 +25,7 @@ along with pragmatickm-procedure-servlet.  If not, see <http://www.gnu.org/licen
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<groupId>com.pragmatickm</groupId><artifactId>pragmatickm-parent</artifactId><version>1.5.1-POST-SNAPSHOT</version>
+		<groupId>com.pragmatickm</groupId><artifactId>pragmatickm-parent</artifactId><version>1.6.0-SNAPSHOT</version>
 		<relativePath>../../parent/pom.xml</relativePath>
 	</parent>
 
@@ -33,11 +33,11 @@ along with pragmatickm-procedure-servlet.  If not, see <http://www.gnu.org/licen
 	<packaging>bundle</packaging>
 
 	<properties>
-		<javadoc.breadcrumbs><![CDATA[<a target="_top" href="https://pragmatickm.com/">PragmaticKM</a>
-/ <a target="_top" href="https://pragmatickm.com/procedure/">Procedure</a>
-/ <a target="_top" href="${project.url}">${shortTitle}</a>]]></javadoc.breadcrumbs>
+		<javadoc.breadcrumbs><![CDATA[<a target="${javadoc.target}" href="https://pragmatickm.com/">PragmaticKM</a>
+/ <a target="${javadoc.target}" href="https://pragmatickm.com/procedure/">Procedure</a>
+/ <a target="${javadoc.target}" href="${project.url}">${shortTitle}</a>]]></javadoc.breadcrumbs>
 		<shortTitle>Servlet</shortTitle>
-		<description.html><![CDATA[Procedures nested within <a target="_top" href="https://semanticcms.com/">SemanticCMS</a> pages and elements in a Servlet environment.]]></description.html>
+		<description.html><![CDATA[Procedures nested within <a target="${javadoc.target}" href="https://semanticcms.com/">SemanticCMS</a> pages and elements in a Servlet environment.]]></description.html>
 	</properties>
 
 	<name>PragmaticKM Procedure Servlet</name>

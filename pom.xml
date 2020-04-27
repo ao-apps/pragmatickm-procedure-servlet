@@ -71,8 +71,8 @@ along with pragmatickm-procedure-servlet.  If not, see <http://www.gnu.org/licen
 								<link>${javadoc.link.javaee}</link>
 								<!-- Direct -->
 								<link>https://aoindustries.com/ao-encoding/apidocs/</link>
-								<link>https://aoindustries.com/ao-fluent/apidocs/</link>
-								<link>https://aoindustries.com/ao-fluent/servlet/apidocs/</link>
+								<link>https://aoindustries.com/ao-fluent-html/apidocs/</link>
+								<link>https://aoindustries.com/ao-fluent-html/servlet/apidocs/</link>
 								<link>https://aoindustries.com/ao-io-buffer/apidocs/</link>
 								<link>https://aoindustries.com/ao-net-types/apidocs/</link>
 								<link>https://aoindustries.com/ao-taglib/apidocs/</link>

@@ -72,11 +72,11 @@ along with pragmatickm-procedure-servlet.  If not, see <http://www.gnu.org/licen
 								<!-- Direct -->
 								<link>https://aoindustries.com/ao-fluent-html/servlet/apidocs/</link>
 								<link>https://pragmatickm.com/procedure/model/apidocs/</link>
-								<link>https://pragmatickm.com/procedure/renderer/html/apidocs/</link>
+								<!-- TODO: Once published: <link>https://pragmatickm.com/procedure/renderer/html/apidocs/</link> -->
 								<link>https://semanticcms.com/core/model/apidocs/</link>
-								<link>https://semanticcms.com/core/pages/apidocs/</link>
-								<link>https://semanticcms.com/core/pages/local/apidocs/</link>
-								<link>https://semanticcms.com/core/renderer/html/apidocs/</link>
+								<!-- TODO: Once published: <link>https://semanticcms.com/core/pages/apidocs/</link> -->
+								<!-- TODO: Once published: <link>https://semanticcms.com/core/pages/local/apidocs/</link> -->
+								<!-- TODO: Once published: <link>https://semanticcms.com/core/renderer/html/apidocs/</link> -->
 								<link>https://semanticcms.com/core/servlet/apidocs/</link>
 							</links>
 						</configuration>

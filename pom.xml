@@ -128,6 +128,11 @@ along with pragmatickm-procedure-servlet.  If not, see <http://www.gnu.org/licen
 											<outputDirectory>${project.build.directory}/offlineLinks/com.aoindustries/ao-io-buffer</outputDirectory>
 										</artifactItem>
 										<artifactItem>
+											<groupId>com.aoindustries</groupId><artifactId>ao-lang</artifactId><classifier>javadoc</classifier>
+											<includes>element-list, package-list</includes>
+											<outputDirectory>${project.build.directory}/offlineLinks/com.aoindustries/ao-lang</outputDirectory>
+										</artifactItem>
+										<artifactItem>
 											<groupId>com.aoindustries</groupId><artifactId>ao-net-types</artifactId><classifier>javadoc</classifier>
 											<includes>element-list, package-list</includes>
 											<outputDirectory>${project.build.directory}/offlineLinks/com.aoindustries/ao-net-types</outputDirectory>
@@ -182,6 +187,10 @@ along with pragmatickm-procedure-servlet.  If not, see <http://www.gnu.org/licen
 									<location>${project.build.directory}/offlineLinks/com.aoindustries/ao-io-buffer</location>
 								</offlineLink>
 								<offlineLink>
+									<url>https://aoindustries.com/ao-lang/apidocs/</url>
+									<location>${project.build.directory}/offlineLinks/com.aoindustries/ao-lang</location>
+								</offlineLink>
+								<offlineLink>
 									<url>https://aoindustries.com/ao-net-types/apidocs/</url>
 									<location>${project.build.directory}/offlineLinks/com.aoindustries/ao-net-types</location>
 								</offlineLink>
@@ -226,7 +235,7 @@ along with pragmatickm-procedure-servlet.  If not, see <http://www.gnu.org/licen
 		<dependencies>
 			<!-- Direct -->
 			<dependency>
-				<groupId>com.aoindustries</groupId><artifactId>ao-encoding</artifactId><version>3.2.1${POST-SNAPSHOT}</version>
+				<groupId>com.aoindustries</groupId><artifactId>ao-encoding</artifactId><version>3.3.0${POST-SNAPSHOT}</version>
 			</dependency>
 			<dependency>
 				<groupId>com.aoindustries</groupId><artifactId>ao-fluent-html</artifactId><version>0.3.0${POST-SNAPSHOT}</version>
@@ -236,6 +245,9 @@ along with pragmatickm-procedure-servlet.  If not, see <http://www.gnu.org/licen
 			</dependency>
 			<dependency>
 				<groupId>com.aoindustries</groupId><artifactId>ao-io-buffer</artifactId><version>3.3.0${POST-SNAPSHOT}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.aoindustries</groupId><artifactId>ao-lang</artifactId><version>4.14.0${POST-SNAPSHOT}</version>
 			</dependency>
 			<dependency>
 				<groupId>com.aoindustries</groupId><artifactId>ao-net-types</artifactId><version>1.2.4${POST-SNAPSHOT}</version>
@@ -267,9 +279,6 @@ along with pragmatickm-procedure-servlet.  If not, see <http://www.gnu.org/licen
 			</dependency>
 			<dependency>
 				<groupId>com.aoindustries</groupId><artifactId>ao-encoding-taglib</artifactId><version>1.0.2${POST-SNAPSHOT}</version>
-			</dependency>
-			<dependency>
-				<groupId>com.aoindustries</groupId><artifactId>ao-lang</artifactId><version>4.14.0${POST-SNAPSHOT}</version>
 			</dependency>
 			<dependency>
 				<groupId>com.aoindustries</groupId><artifactId>ao-servlet-filter</artifactId><version>2.3.0${POST-SNAPSHOT}</version>
@@ -333,6 +342,9 @@ along with pragmatickm-procedure-servlet.  If not, see <http://www.gnu.org/licen
 		</dependency>
 		<dependency>
 			<groupId>com.aoindustries</groupId><artifactId>ao-io-buffer</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.aoindustries</groupId><artifactId>ao-lang</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>com.aoindustries</groupId><artifactId>ao-net-types</artifactId>

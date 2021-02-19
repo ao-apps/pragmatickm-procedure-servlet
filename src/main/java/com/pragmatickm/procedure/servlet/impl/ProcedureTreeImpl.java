@@ -1,6 +1,6 @@
 /*
  * pragmatickm-procedure-servlet - Procedures nested within SemanticCMS pages and elements in a Servlet environment.
- * Copyright (C) 2014, 2015, 2016, 2019, 2020  AO Industries, Inc.
+ * Copyright (C) 2014, 2015, 2016, 2019, 2020, 2021  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -23,7 +23,7 @@
 package com.pragmatickm.procedure.servlet.impl;
 
 import static com.aoindustries.encoding.TextInXhtmlAttributeEncoder.encodeTextInXhtmlAttribute;
-import com.aoindustries.html.Html;
+import com.aoindustries.html.Document;
 import com.aoindustries.net.URIEncoder;
 import static com.aoindustries.taglib.AttributeUtils.resolveValue;
 import com.pragmatickm.procedure.model.Procedure;
@@ -98,7 +98,7 @@ final public class ProcedureTreeImpl {
 		Node currentNode,
 		Set<PageRef> pagesWithProcedures,
 		PageIndex pageIndex,
-		Html html,
+		Document document,
 		PageRef parentPageRef,
 		Page page
 	) throws IOException, ServletException {
@@ -120,19 +120,19 @@ final public class ProcedureTreeImpl {
 			&& procedures.get(0).getLabel().equals(page.getShortTitle())
 		;
 
-		if(html != null) {
+		if(document != null) {
 			SemanticCMS semanticCMS = SemanticCMS.getInstance(servletContext);
-			html.out.write("<li><a");
+			document.out.write("<li><a");
 			if(mainLinkToProcedure) {
 				String linkCssClass = semanticCMS.getLinkCssClass(procedures.get(0));
 				if(linkCssClass != null) {
-					html.out.write(" class=\"");
-					encodeTextInXhtmlAttribute(linkCssClass, html.out);
-					html.out.write('"');
+					document.out.write(" class=\"");
+					encodeTextInXhtmlAttribute(linkCssClass, document.out);
+					document.out.write('"');
 				}
 			}
 			Integer index = pageIndex==null ? null : pageIndex.getPageIndex(pageRef);
-			html.out.write(" href=\"");
+			document.out.write(" href=\"");
 			StringBuilder href = new StringBuilder();
 			if(index != null) {
 				href.append('#');
@@ -155,27 +155,27 @@ final public class ProcedureTreeImpl {
 				response.encodeURL(
 					href.toString()
 				),
-				html.out
+				document.out
 			);
-			html.out.write("\">");
-			html.text(PageUtils.getShortTitle(parentPageRef, page));
+			document.out.write("\">");
+			document.text(PageUtils.getShortTitle(parentPageRef, page));
 			if(index != null) {
-				html.out.write("<sup>[");
-				html.text(index + 1);
-				html.out.write("]</sup>");
+				document.out.write("<sup>[");
+				document.text(index + 1);
+				document.out.write("]</sup>");
 			}
-			html.out.write("</a>");
+			document.out.write("</a>");
 			if(!mainLinkToProcedure) {
 				if(!procedures.isEmpty()) {
 					for(Procedure procedure : procedures) {
-						html.out.write("\n<div><a");
+						document.out.write("\n<div><a");
 						String linkCssClass = semanticCMS.getLinkCssClass(procedure);
 						if(linkCssClass != null) {
-							html.out.write(" class=\"");
-							encodeTextInXhtmlAttribute(linkCssClass, html.out);
-							html.out.write('"');
+							document.out.write(" class=\"");
+							encodeTextInXhtmlAttribute(linkCssClass, document.out);
+							document.out.write('"');
 						}
-						html.out.write(" href=\"");
+						document.out.write(" href=\"");
 						href.setLength(0);
 						if(index != null) {
 							href.append('#');
@@ -196,16 +196,16 @@ final public class ProcedureTreeImpl {
 							response.encodeURL(
 								href.toString()
 							),
-							html.out
+							document.out
 						);
-						html.out.write("\">");
-						html.text(procedure.getLabel());
+						document.out.write("\">");
+						document.text(procedure.getLabel());
 						if(index != null) {
-							html.out.write("<sup>[");
-							html.text(index + 1);
-							html.out.write("]</sup>");
+							document.out.write("<sup>[");
+							document.text(index + 1);
+							document.out.write("]</sup>");
 						}
-						html.out.write("</a></div>");
+						document.out.write("</a></div>");
 					}
 				}
 			}
@@ -215,8 +215,8 @@ final public class ProcedureTreeImpl {
 			pagesWithProcedures
 		);
 		if(!childRefs.isEmpty()) {
-			if(html != null) {
-				html.out.write("\n"
+			if(document != null) {
+				document.out.write("\n"
 					+ "<ul>\n");
 			}
 			// TODO: traversal
@@ -224,21 +224,21 @@ final public class ProcedureTreeImpl {
 				PageRef childPageRef = childRef.getPageRef();
 				assert childPageRef.getBook() != null : "pagesWithProcedures does not contain anything from missing books";
 				Page child = CapturePage.capturePage(servletContext, request, response, childPageRef, CaptureLevel.META);
-				writePage(servletContext, request, response, currentNode, pagesWithProcedures, pageIndex, html, pageRef, child);
+				writePage(servletContext, request, response, currentNode, pagesWithProcedures, pageIndex, document, pageRef, child);
 			}
-			if(html != null) html.out.write("</ul>\n");
+			if(document != null) document.out.write("</ul>\n");
 		}
-		if(html != null) html.out.write("</li>\n");
+		if(document != null) document.out.write("</li>\n");
 	}
 
 	/**
-	 * @param html  optional, null if no output needs to be written
+	 * @param document  optional, null if no output needs to be written
 	 */
 	public static void writeProcedureTree(
 		ServletContext servletContext,
 		HttpServletRequest request,
 		HttpServletResponse response,
-		Html html,
+		Document document,
 		Page root
 	) throws ServletException, IOException {
 		writeProcedureTree(
@@ -246,13 +246,13 @@ final public class ProcedureTreeImpl {
 			null,
 			request,
 			response,
-			html,
+			document,
 			root
 		);
 	}
 
 	/**
-	 * @param html  optional, null if no output needs to be written
+	 * @param document  optional, null if no output needs to be written
 	 * @param root  either Page of ValueExpression that returns Page
 	 */
 	public static void writeProcedureTree(
@@ -260,7 +260,7 @@ final public class ProcedureTreeImpl {
 		ELContext elContext,
 		HttpServletRequest request,
 		HttpServletResponse response,
-		Html html,
+		Document document,
 		Object root
 	) throws ServletException, IOException {
 		// Get the current capture state
@@ -273,7 +273,7 @@ final public class ProcedureTreeImpl {
 			final Set<PageRef> pagesWithProcedures = new HashSet<>();
 			findProcedures(servletContext, request, response, pagesWithProcedures, rootPage);
 
-			if(html != null) html.out.write("<ul>\n");
+			if(document != null) document.out.write("<ul>\n");
 			writePage(
 				servletContext,
 				request,
@@ -281,11 +281,11 @@ final public class ProcedureTreeImpl {
 				CurrentNode.getCurrentNode(request),
 				pagesWithProcedures,
 				PageIndex.getCurrentPageIndex(request),
-				html,
+				document,
 				null,
 				rootPage
 			);
-			if(html != null) html.out.write("</ul>\n");
+			if(document != null) document.out.write("</ul>\n");
 		}
 	}
 

@@ -1,6 +1,6 @@
 /*
  * pragmatickm-procedure-servlet - Procedures nested within SemanticCMS pages and elements in a Servlet environment.
- * Copyright (C) 2014, 2015, 2016, 2017, 2020  AO Industries, Inc.
+ * Copyright (C) 2014, 2015, 2016, 2017, 2020, 2021  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -22,7 +22,7 @@
  */
 package com.pragmatickm.procedure.servlet;
 
-import com.aoindustries.html.servlet.HtmlEE;
+import com.aoindustries.html.servlet.DocumentEE;
 import com.pragmatickm.procedure.renderer.html.ProcedureHtmlRenderer;
 import com.semanticcms.core.model.ElementContext;
 import com.semanticcms.core.model.Page;
@@ -167,9 +167,8 @@ public class Procedure extends Element<com.pragmatickm.procedure.model.Procedure
 
 	@Override
 	public void writeTo(Writer out, ElementContext context) throws IOException, ServletException, SkipPageException {
-		ProcedureHtmlRenderer.writeProcedureTable(
-			pageIndex,
-			HtmlEE.get(servletContext, request, response, out),
+		ProcedureHtmlRenderer.writeProcedureTable(pageIndex,
+			DocumentEE.get(servletContext, request, response, out),
 			context,
 			style,
 			element

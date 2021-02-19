@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 pragmatickm-procedure-servlet - Procedures nested within SemanticCMS pages and elements in a Servlet environment.
-Copyright (C) 2017, 2019, 2020  AO Industries, Inc.
+Copyright (C) 2017, 2019, 2020, 2021  AO Industries, Inc.
     support@aoindustries.com
     7262 Bull Pen Cir
     Mobile, AL 36695
@@ -37,7 +37,7 @@ along with pragmatickm-procedure-servlet.  If not, see <http://www.gnu.org/licen
 		shortTitle="Changelog"
 		tocLevels="1"
 		datePublished="2017-07-25T18:14:05-0500"
-		dateModified="2020-03-28T23:17:45-05:00"
+		dateModified="2021-02-19T05:52:12-06:00"
 	>
 		<c:if test="${fn:endsWith('@{project.version}', '-SNAPSHOT') and !fn:endsWith('@{project.version}', '-POST-SNAPSHOT')}">
 			<changelog:release
@@ -49,6 +49,7 @@ along with pragmatickm-procedure-servlet.  If not, see <http://www.gnu.org/licen
 			>
 				<ul>
 					<li>Added <ao:a href="https://semanticcms.com/core/pages/">SemanticCMS Core Pages</ao:a> support.</li>
+					<li>Updated dependencies.</li>
 				</ul>
 			</changelog:release>
 		</c:if>

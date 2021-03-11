@@ -22,6 +22,7 @@
  */
 package com.pragmatickm.procedure.servlet.impl;
 
+import com.aoindustries.html.AnyDocument;
 import com.aoindustries.html.ListContent;
 import com.aoindustries.html.PalpableContent;
 import com.aoindustries.net.URIEncoder;
@@ -91,7 +92,10 @@ final public class ProcedureTreeImpl {
 		return hasProcedure;
 	}
 
-	private static <__ extends ListContent<__>> void writePage(
+	private static <
+		D extends AnyDocument<D>,
+		__ extends ListContent<D, __>
+	> void writePage(
 		ServletContext servletContext,
 		HttpServletRequest request,
 		HttpServletResponse response,
@@ -226,7 +230,10 @@ final public class ProcedureTreeImpl {
 	/**
 	 * @param content  optional, null if no output needs to be written
 	 */
-	public static <__ extends PalpableContent<__>> void writeProcedureTree(
+	public static <
+		D extends AnyDocument<D>,
+		__ extends PalpableContent<D, __>
+	> void writeProcedureTree(
 		ServletContext servletContext,
 		HttpServletRequest request,
 		HttpServletResponse response,
@@ -247,7 +254,10 @@ final public class ProcedureTreeImpl {
 	 * @param content  optional, null if no output needs to be written
 	 * @param root  either Page of ValueExpression that returns Page
 	 */
-	public static <__ extends PalpableContent<__>> void writeProcedureTree(
+	public static <
+		D extends AnyDocument<D>,
+		__ extends PalpableContent<D, __>
+	> void writeProcedureTree(
 		ServletContext servletContext,
 		ELContext elContext,
 		HttpServletRequest request,

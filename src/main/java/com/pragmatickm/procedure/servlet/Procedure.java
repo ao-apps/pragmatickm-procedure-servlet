@@ -22,7 +22,7 @@
  */
 package com.pragmatickm.procedure.servlet;
 
-import com.aoindustries.html.servlet.DocumentEE;
+import com.aoapps.html.servlet.DocumentEE;
 import com.pragmatickm.procedure.servlet.impl.ProcedureImpl;
 import com.semanticcms.core.model.ElementContext;
 import com.semanticcms.core.model.Page;

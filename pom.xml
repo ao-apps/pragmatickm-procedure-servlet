@@ -235,7 +235,7 @@ along with pragmatickm-procedure-servlet.  If not, see <http://www.gnu.org/licen
 		<dependencies>
 			<!-- Direct -->
 			<dependency>
-				<groupId>com.aoapps</groupId><artifactId>ao-fluent-html-servlet</artifactId><version>0.5.0-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
+				<groupId>com.aoapps</groupId><artifactId>ao-fluent-html-servlet</artifactId><version>0.5.0${POST-SNAPSHOT}</version>
 			</dependency>
 			<!-- javaee-web-api-bom: <groupId>javax.servlet</groupId><artifactId>javax.servlet-api</artifactId> -->
 			<!-- javaee-web-api-bom: <groupId>javax.servlet.jsp</groupId><artifactId>javax.servlet.jsp-api</artifactId> -->

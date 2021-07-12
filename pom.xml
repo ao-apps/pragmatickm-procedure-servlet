@@ -38,6 +38,10 @@ along with pragmatickm-procedure-servlet.  If not, see <http://www.gnu.org/licen
 / <a target="${javadoc.target}" href="https://pragmatickm.com/procedure/">Procedure</a>
 / <a target="${javadoc.target}" href="${project.url}">Servlet</a>]]></javadoc.breadcrumbs>
 		<description.html><![CDATA[Procedures nested within <a target="${javadoc.target}" href="https://semanticcms.com/">SemanticCMS</a> pages and elements in a Servlet environment.]]></description.html>
+		<!-- SonarCloud.io -->
+		<sonar.projectKey>${project.groupId}:${project.artifactId}</sonar.projectKey>
+		<sonar.organization>aoindustries</sonar.organization>
+		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
 	</properties>
 
 	<name>PragmaticKM Procedure Servlet²</name>

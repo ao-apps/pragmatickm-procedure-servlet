@@ -40,7 +40,7 @@ along with pragmatickm-procedure-servlet.  If not, see <http://www.gnu.org/licen
 		<description.html><![CDATA[Procedures nested within <a target="${javadoc.target}" href="https://semanticcms.com/">SemanticCMS</a> pages and elements in a Servlet environment.]]></description.html>
 		<!-- SonarQube -->
 		<sonar.projectKey>${project.groupId}:${project.artifactId}</sonar.projectKey>
-		<sonar.organization>aoindustries</sonar.organization>
+		<sonar.organization>ao-apps</sonar.organization>
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
 		<!-- TODO: Implement tests -->
 		<sonar.coverage.exclusions>**.*</sonar.coverage.exclusions>
@@ -75,20 +75,20 @@ along with pragmatickm-procedure-servlet.  If not, see <http://www.gnu.org/licen
 	</developers>
 
 	<scm>
-		<connection>scm:git:git://github.com/aoindustries/pragmatickm-procedure-servlet.git</connection>
-		<developerConnection>scm:git:git@github.com:aoindustries/pragmatickm-procedure-servlet.git</developerConnection>
-		<url>https://github.com/aoindustries/pragmatickm-procedure-servlet</url>
+		<connection>scm:git:git://github.com/ao-apps/pragmatickm-procedure-servlet.git</connection>
+		<developerConnection>scm:git:git@github.com:ao-apps/pragmatickm-procedure-servlet.git</developerConnection>
+		<url>https://github.com/ao-apps/pragmatickm-procedure-servlet</url>
 		<tag>HEAD</tag>
 	</scm>
 
 	<issueManagement>
 		<system>GitHub Issues</system>
-		<url>https://github.com/aoindustries/pragmatickm-procedure-servlet/issues</url>
+		<url>https://github.com/ao-apps/pragmatickm-procedure-servlet/issues</url>
 	</issueManagement>
 
 	<ciManagement>
 		<system>GitHub Actions</system>
-		<url>https://github.com/aoindustries/pragmatickm-procedure-servlet/actions</url>
+		<url>https://github.com/ao-apps/pragmatickm-procedure-servlet/actions</url>
 	</ciManagement>
 
 	<repositories>

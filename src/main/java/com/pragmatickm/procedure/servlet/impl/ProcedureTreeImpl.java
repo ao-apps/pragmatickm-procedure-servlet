@@ -50,7 +50,10 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public final class ProcedureTreeImpl {
+public abstract class ProcedureTreeImpl {
+
+	/** Make no instances. */
+	private ProcedureTreeImpl() {throw new AssertionError();}
 
 	// TODO: as traversal
 	private static boolean findProcedures(
@@ -294,11 +297,5 @@ public final class ProcedureTreeImpl {
 				);
 			}
 		}
-	}
-
-	/**
-	 * Make no instances.
-	 */
-	private ProcedureTreeImpl() {
 	}
 }

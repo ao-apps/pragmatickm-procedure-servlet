@@ -100,6 +100,9 @@ along with pragmatickm-procedure-servlet.  If not, see <https://www.gnu.org/lice
 			<releases>
 				<enabled>false</enabled>
 			</releases>
+			<snapshots>
+				<checksumPolicy>fail</checksumPolicy>
+			</snapshots>
 		</repository>
 	</repositories>
 

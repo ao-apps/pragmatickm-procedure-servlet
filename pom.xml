@@ -87,9 +87,15 @@ along with pragmatickm-procedure-servlet.  If not, see <https://www.gnu.org/lice
 	</issueManagement>
 
 	<ciManagement>
+		<system>Jenkins</system>
+		<url>https://jenkins.aoindustries.com/job/ao/job/pragmatickm-1.x/job/procedure/job/servlet/</url>
+	</ciManagement>
+	<!-- Only one allowed in POM:
+	<ciManagement>
 		<system>GitHub Actions</system>
 		<url>https://github.com/ao-apps/pragmatickm-procedure-servlet/actions</url>
 	</ciManagement>
+	-->
 
 	<repositories>
 		<!-- Repository required here, too, so can find parent -->
@@ -178,9 +184,9 @@ along with pragmatickm-procedure-servlet.  If not, see <https://www.gnu.org/lice
 											<includes>element-list, package-list</includes>
 											<outputDirectory>${project.build.directory}/offlineLinks/com.aoapps/ao-taglib</outputDirectory>
 										</artifactItem>
-										<!-- ao-javadoc-offline: <groupId>javax.el</groupId><artifactId>javax.el-api</artifactId> -->
-										<!-- ao-javadoc-offline: <groupId>javax.servlet</groupId><artifactId>javax.servlet-api</artifactId> -->
-										<!-- ao-javadoc-offline: <groupId>javax.servlet.jsp</groupId><artifactId>javax.servlet.jsp-api</artifactId> -->
+										<!-- ao-javadoc-offline: <groupId>javax.el</groupId><artifactId>javax.el-api</artifactId><classifier>javadoc</classifier> -->
+										<!-- ao-javadoc-offline: <groupId>javax.servlet</groupId><artifactId>javax.servlet-api</artifactId><classifier>javadoc</classifier> -->
+										<!-- ao-javadoc-offline: <groupId>javax.servlet.jsp</groupId><artifactId>javax.servlet.jsp-api</artifactId><classifier>javadoc</classifier> -->
 										<artifactItem>
 											<groupId>com.pragmatickm</groupId><artifactId>pragmatickm-procedure-model</artifactId><classifier>javadoc</classifier>
 											<includes>element-list, package-list</includes>
@@ -234,9 +240,9 @@ along with pragmatickm-procedure-servlet.  If not, see <https://www.gnu.org/lice
 									<url>https://oss.aoapps.com/taglib/apidocs/</url>
 									<location>${project.build.directory}/offlineLinks/com.aoapps/ao-taglib</location>
 								</offlineLink>
-								<!-- ao-javadoc-offline: <groupId>javax.el</groupId><artifactId>javax.el-api</artifactId> -->
-								<!-- ao-javadoc-offline: <groupId>javax.servlet</groupId><artifactId>javax.servlet-api</artifactId> -->
-								<!-- ao-javadoc-offline: <groupId>javax.servlet.jsp</groupId><artifactId>javax.servlet.jsp-api</artifactId> -->
+								<!-- ao-javadoc-offline: <groupId>javax.el</groupId><artifactId>javax.el-api</artifactId><classifier>javadoc</classifier> -->
+								<!-- ao-javadoc-offline: <groupId>javax.servlet</groupId><artifactId>javax.servlet-api</artifactId><classifier>javadoc</classifier> -->
+								<!-- ao-javadoc-offline: <groupId>javax.servlet.jsp</groupId><artifactId>javax.servlet.jsp-api</artifactId><classifier>javadoc</classifier> -->
 								<offlineLink>
 									<url>https://pragmatickm.com/procedure/model/apidocs/</url>
 									<location>${project.build.directory}/offlineLinks/com.pragmatickm/pragmatickm-procedure-model</location>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 pragmatickm-procedure-servlet - Procedures nested within SemanticCMS pages and elements in a Servlet environment.
-Copyright (C) 2017, 2019, 2020, 2021  AO Industries, Inc.
+Copyright (C) 2017, 2019, 2020, 2021, 2022  AO Industries, Inc.
     support@aoindustries.com
     7262 Bull Pen Cir
     Mobile, AL 36695
@@ -37,7 +37,7 @@ along with pragmatickm-procedure-servlet.  If not, see <https://www.gnu.org/lice
 		shortTitle="Changelog"
 		tocLevels="1"
 		datePublished="2017-07-25T18:14:05-05:00"
-		dateModified="2021-07-22T22:13:30-05:00"
+		dateModified="2022-03-21T05:50:15-05:00"
 	>
 		<c:if test="${fn:endsWith('@{project.version}', '-SNAPSHOT') and !fn:endsWith('@{project.version}', '-POST-SNAPSHOT')}">
 			<changelog:release
@@ -47,7 +47,11 @@ along with pragmatickm-procedure-servlet.  If not, see <https://www.gnu.org/lice
 				artifactId="@{documented.artifactId}"
 				repository="@{nexusUrl}content/repositories/snapshots/"
 				scmUrl="@{project.scm.url}"
-			/>
+			>
+				<ul>
+					<li>Updated dependencies.</li>
+				</ul>
+			</changelog:release>
 		</c:if>
 
 		<changelog:release

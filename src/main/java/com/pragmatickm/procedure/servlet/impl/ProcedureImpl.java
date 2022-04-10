@@ -29,6 +29,7 @@ import com.semanticcms.core.model.ElementContext;
 import com.semanticcms.core.model.NodeBodyWriter;
 import com.semanticcms.core.servlet.PageIndex;
 import java.io.IOException;
+import java.io.Writer;
 
 public final class ProcedureImpl {
 
@@ -63,9 +64,11 @@ public final class ProcedureImpl {
 				BufferResult body = procedure.getBody();
 				if(body.getLength() > 0) {
 					tbody.tr__any(tr -> tr
-						.td__any(td ->
-							body.writeTo(new NodeBodyWriter(procedure, td.getUnsafe(), context))
-						)
+						.td__any(td -> {
+							@SuppressWarnings("deprecation")
+							Writer unsafe = td.getRawUnsafe();
+							body.writeTo(new NodeBodyWriter(procedure, unsafe, context));
+						})
 					);
 				}
 			})

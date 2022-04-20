@@ -34,45 +34,47 @@ import java.io.Writer;
 
 public final class ProcedureImpl {
 
-	/** Make no instances. */
-	private ProcedureImpl() {throw new AssertionError();}
+  /** Make no instances. */
+  private ProcedureImpl() {
+    throw new AssertionError();
+  }
 
-	public static void writeProcedureTable(
-		PageIndex pageIndex,
-		AnyPalpableContent<?, ?> content,
-		ElementContext context,
-		Object style,
-		Procedure procedure
-	) throws IOException {
-		content.table()
-			.id(idAttr -> PageIndex.appendIdInPage(
-				pageIndex,
-				procedure.getPage(),
-				procedure.getId(),
-				idAttr
-			))
-			.clazz("ao-grid", "pragmatickm-procedure")
-			.style(style)
-		.__(table -> table
-			.thead__any(thead -> thead
-				.tr__any(tr -> tr
-					.th__any(th -> th
-						.div__(procedure)
-					)
-				)
-			)
-			.tbody__any(tbody -> {
-				BufferResult body = procedure.getBody();
-				if(body.getLength() > 0) {
-					tbody.tr__any(tr -> tr
-						.td__any(td -> {
-							@SuppressWarnings("deprecation")
-							Writer unsafe = td.getRawUnsafe();
-							body.writeTo(new NodeBodyWriter(procedure, unsafe, context));
-						})
-					);
-				}
-			})
-		);
-	}
+  public static void writeProcedureTable(
+    PageIndex pageIndex,
+    AnyPalpableContent<?, ?> content,
+    ElementContext context,
+    Object style,
+    Procedure procedure
+  ) throws IOException {
+    content.table()
+      .id(idAttr -> PageIndex.appendIdInPage(
+        pageIndex,
+        procedure.getPage(),
+        procedure.getId(),
+        idAttr
+      ))
+      .clazz("ao-grid", "pragmatickm-procedure")
+      .style(style)
+    .__(table -> table
+      .thead__any(thead -> thead
+        .tr__any(tr -> tr
+          .th__any(th -> th
+            .div__(procedure)
+          )
+        )
+      )
+      .tbody__any(tbody -> {
+        BufferResult body = procedure.getBody();
+        if (body.getLength() > 0) {
+          tbody.tr__any(tr -> tr
+            .td__any(td -> {
+              @SuppressWarnings("deprecation")
+              Writer unsafe = td.getRawUnsafe();
+              body.writeTo(new NodeBodyWriter(procedure, unsafe, context));
+            })
+          );
+        }
+      })
+    );
+  }
 }

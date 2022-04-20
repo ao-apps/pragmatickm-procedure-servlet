@@ -42,138 +42,140 @@ import javax.servlet.jsp.SkipPageException;
 
 public class Procedure extends Element<com.pragmatickm.procedure.model.Procedure> {
 
-	public Procedure(
-		ServletContext servletContext,
-		HttpServletRequest request,
-		HttpServletResponse response,
-		com.pragmatickm.procedure.model.Procedure element
-	) {
-		super(
-			servletContext,
-			request,
-			response,
-			element
-		);
-	}
+  public Procedure(
+    ServletContext servletContext,
+    HttpServletRequest request,
+    HttpServletResponse response,
+    com.pragmatickm.procedure.model.Procedure element
+  ) {
+    super(
+      servletContext,
+      request,
+      response,
+      element
+    );
+  }
 
-	public Procedure(
-		ServletContext servletContext,
-		HttpServletRequest request,
-		HttpServletResponse response
-	) {
-		this(
-			servletContext,
-			request,
-			response,
-			new com.pragmatickm.procedure.model.Procedure()
-		);
-	}
+  public Procedure(
+    ServletContext servletContext,
+    HttpServletRequest request,
+    HttpServletResponse response
+  ) {
+    this(
+      servletContext,
+      request,
+      response,
+      new com.pragmatickm.procedure.model.Procedure()
+    );
+  }
 
-	public Procedure(
-		ServletContext servletContext,
-		HttpServletRequest request,
-		HttpServletResponse response,
-		com.pragmatickm.procedure.model.Procedure element,
-		String label
-	) {
-		this(servletContext, request, response, element);
-		element.setLabel(label);
-	}
+  public Procedure(
+    ServletContext servletContext,
+    HttpServletRequest request,
+    HttpServletResponse response,
+    com.pragmatickm.procedure.model.Procedure element,
+    String label
+  ) {
+    this(servletContext, request, response, element);
+    element.setLabel(label);
+  }
 
-	public Procedure(
-		ServletContext servletContext,
-		HttpServletRequest request,
-		HttpServletResponse response,
-		String label
-	) {
-		this(servletContext, request, response);
-		element.setLabel(label);
-	}
+  public Procedure(
+    ServletContext servletContext,
+    HttpServletRequest request,
+    HttpServletResponse response,
+    String label
+  ) {
+    this(servletContext, request, response);
+    element.setLabel(label);
+  }
 
-	/**
-	 * Creates a new procedure in the current page context.
-	 *
-	 * @see  PageContext
-	 */
-	public Procedure(com.pragmatickm.procedure.model.Procedure element) {
-		this(
-			PageContext.getServletContext(),
-			PageContext.getRequest(),
-			PageContext.getResponse(),
-			element
-		);
-	}
+  /**
+   * Creates a new procedure in the current page context.
+   *
+   * @see  PageContext
+   */
+  public Procedure(com.pragmatickm.procedure.model.Procedure element) {
+    this(
+      PageContext.getServletContext(),
+      PageContext.getRequest(),
+      PageContext.getResponse(),
+      element
+    );
+  }
 
-	/**
-	 * Creates a new procedure in the current page context.
-	 *
-	 * @see  PageContext
-	 */
-	public Procedure() {
-		this(
-			PageContext.getServletContext(),
-			PageContext.getRequest(),
-			PageContext.getResponse()
-		);
-	}
+  /**
+   * Creates a new procedure in the current page context.
+   *
+   * @see  PageContext
+   */
+  public Procedure() {
+    this(
+      PageContext.getServletContext(),
+      PageContext.getRequest(),
+      PageContext.getResponse()
+    );
+  }
 
-	/**
-	 * @see  #Procedure()
-	 */
-	public Procedure(
-		com.pragmatickm.procedure.model.Procedure element,
-		String label
-	) {
-		this(element);
-		element.setLabel(label);
-	}
+  /**
+   * @see  #Procedure()
+   */
+  public Procedure(
+    com.pragmatickm.procedure.model.Procedure element,
+    String label
+  ) {
+    this(element);
+    element.setLabel(label);
+  }
 
-	/**
-	 * @see  #Procedure()
-	 */
-	public Procedure(String label) {
-		this();
-		element.setLabel(label);
-	}
+  /**
+   * @see  #Procedure()
+   */
+  public Procedure(String label) {
+    this();
+    element.setLabel(label);
+  }
 
-	@Override
-	public Procedure id(String id) {
-		super.id(id);
-		return this;
-	}
+  @Override
+  public Procedure id(String id) {
+    super.id(id);
+    return this;
+  }
 
-	private Object style;
-	public Procedure style(Object style) {
-		this.style = style;
-		return this;
-	}
+  private Object style;
+  public Procedure style(Object style) {
+    this.style = style;
+    return this;
+  }
 
-	public Procedure label(String label) {
-		element.setLabel(label);
-		return this;
-	}
+  public Procedure label(String label) {
+    element.setLabel(label);
+    return this;
+  }
 
-	private PageIndex pageIndex;
-	@Override
-	protected void doBody(CaptureLevel captureLevel, Body<? super com.pragmatickm.procedure.model.Procedure> body) throws ServletException, IOException, SkipPageException {
-		final Page currentPage = CurrentPage.getCurrentPage(request);
-		if(currentPage == null) throw new ServletException("Procedure must be nested inside a Page.");
-		pageIndex = PageIndex.getCurrentPageIndex(request);
-		// Label defaults to page short title
-		if(element.getLabel() == null) {
-			element.setLabel(currentPage.getShortTitle());
-		}
-		super.doBody(captureLevel, body);
-	}
+  private PageIndex pageIndex;
+  @Override
+  protected void doBody(CaptureLevel captureLevel, Body<? super com.pragmatickm.procedure.model.Procedure> body) throws ServletException, IOException, SkipPageException {
+    final Page currentPage = CurrentPage.getCurrentPage(request);
+    if (currentPage == null) {
+      throw new ServletException("Procedure must be nested inside a Page.");
+    }
+    pageIndex = PageIndex.getCurrentPageIndex(request);
+    // Label defaults to page short title
+    if (element.getLabel() == null) {
+      element.setLabel(currentPage.getShortTitle());
+    }
+    super.doBody(captureLevel, body);
+  }
 
-	@Override
-	public void writeTo(Writer out, ElementContext context) throws IOException, ServletException, SkipPageException {
-		ProcedureHtmlRenderer.writeProcedureTable(
-			pageIndex,
-			new DocumentEE(servletContext, request, response, out),
-			context,
-			style,
-			element
-		);
-	}
+  @Override
+  public void writeTo(Writer out, ElementContext context) throws IOException, ServletException, SkipPageException {
+    ProcedureHtmlRenderer.writeProcedureTable(
+      pageIndex,
+      new DocumentEE(servletContext, request, response, out),
+      context,
+      style,
+      element
+    );
+  }
 }

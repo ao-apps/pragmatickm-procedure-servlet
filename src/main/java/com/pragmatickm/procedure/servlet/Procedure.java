@@ -43,48 +43,48 @@ import javax.servlet.jsp.SkipPageException;
 public class Procedure extends Element<com.pragmatickm.procedure.model.Procedure> {
 
   public Procedure(
-    ServletContext servletContext,
-    HttpServletRequest request,
-    HttpServletResponse response,
-    com.pragmatickm.procedure.model.Procedure element
+      ServletContext servletContext,
+      HttpServletRequest request,
+      HttpServletResponse response,
+      com.pragmatickm.procedure.model.Procedure element
   ) {
     super(
-      servletContext,
-      request,
-      response,
-      element
+        servletContext,
+        request,
+        response,
+        element
     );
   }
 
   public Procedure(
-    ServletContext servletContext,
-    HttpServletRequest request,
-    HttpServletResponse response
+      ServletContext servletContext,
+      HttpServletRequest request,
+      HttpServletResponse response
   ) {
     this(
-      servletContext,
-      request,
-      response,
-      new com.pragmatickm.procedure.model.Procedure()
+        servletContext,
+        request,
+        response,
+        new com.pragmatickm.procedure.model.Procedure()
     );
   }
 
   public Procedure(
-    ServletContext servletContext,
-    HttpServletRequest request,
-    HttpServletResponse response,
-    com.pragmatickm.procedure.model.Procedure element,
-    String label
+      ServletContext servletContext,
+      HttpServletRequest request,
+      HttpServletResponse response,
+      com.pragmatickm.procedure.model.Procedure element,
+      String label
   ) {
     this(servletContext, request, response, element);
     element.setLabel(label);
   }
 
   public Procedure(
-    ServletContext servletContext,
-    HttpServletRequest request,
-    HttpServletResponse response,
-    String label
+      ServletContext servletContext,
+      HttpServletRequest request,
+      HttpServletResponse response,
+      String label
   ) {
     this(servletContext, request, response);
     element.setLabel(label);
@@ -97,10 +97,10 @@ public class Procedure extends Element<com.pragmatickm.procedure.model.Procedure
    */
   public Procedure(com.pragmatickm.procedure.model.Procedure element) {
     this(
-      PageContext.getServletContext(),
-      PageContext.getRequest(),
-      PageContext.getResponse(),
-      element
+        PageContext.getServletContext(),
+        PageContext.getRequest(),
+        PageContext.getResponse(),
+        element
     );
   }
 
@@ -111,9 +111,9 @@ public class Procedure extends Element<com.pragmatickm.procedure.model.Procedure
    */
   public Procedure() {
     this(
-      PageContext.getServletContext(),
-      PageContext.getRequest(),
-      PageContext.getResponse()
+        PageContext.getServletContext(),
+        PageContext.getRequest(),
+        PageContext.getResponse()
     );
   }
 
@@ -121,8 +121,8 @@ public class Procedure extends Element<com.pragmatickm.procedure.model.Procedure
    * @see  #Procedure()
    */
   public Procedure(
-    com.pragmatickm.procedure.model.Procedure element,
-    String label
+      com.pragmatickm.procedure.model.Procedure element,
+      String label
   ) {
     this(element);
     element.setLabel(label);
@@ -143,6 +143,7 @@ public class Procedure extends Element<com.pragmatickm.procedure.model.Procedure
   }
 
   private Object style;
+
   public Procedure style(Object style) {
     this.style = style;
     return this;
@@ -154,6 +155,7 @@ public class Procedure extends Element<com.pragmatickm.procedure.model.Procedure
   }
 
   private PageIndex pageIndex;
+
   @Override
   protected void doBody(CaptureLevel captureLevel, Body<? super com.pragmatickm.procedure.model.Procedure> body) throws ServletException, IOException, SkipPageException {
     final Page currentPage = CurrentPage.getCurrentPage(request);
@@ -171,11 +173,11 @@ public class Procedure extends Element<com.pragmatickm.procedure.model.Procedure
   @Override
   public void writeTo(Writer out, ElementContext context) throws IOException, ServletException, SkipPageException {
     ProcedureHtmlRenderer.writeProcedureTable(
-      pageIndex,
-      new DocumentEE(servletContext, request, response, out),
-      context,
-      style,
-      element
+        pageIndex,
+        new DocumentEE(servletContext, request, response, out),
+        context,
+        style,
+        element
     );
   }
 }

@@ -60,11 +60,11 @@ public final class ProcedureTreeImpl {
 
   // TODO: as traversal
   private static boolean findProcedures(
-    ServletContext servletContext,
-    HttpServletRequest request,
-    HttpServletResponse response,
-    Set<PageRef> pagesWithProcedures,
-    Page page
+      ServletContext servletContext,
+      HttpServletRequest request,
+      HttpServletResponse response,
+      Set<PageRef> pagesWithProcedures,
+      Page page
   ) throws ServletException, IOException {
     boolean hasProcedure = false;
     for (Element element : page.getElements()) {
@@ -79,13 +79,13 @@ public final class ProcedureTreeImpl {
       if (childPageRef.getBook() != null) {
         Page child = CapturePage.capturePage(servletContext, request, response, childPageRef, CaptureLevel.META);
         if (
-          findProcedures(
-            servletContext,
-            request,
-            response,
-            pagesWithProcedures,
-            child
-          )
+            findProcedures(
+                servletContext,
+                request,
+                response,
+                pagesWithProcedures,
+                child
+            )
         ) {
           hasProcedure = true;
         }
@@ -98,15 +98,15 @@ public final class ProcedureTreeImpl {
   }
 
   private static void writePage(
-    ServletContext servletContext,
-    HttpServletRequest request,
-    HttpServletResponse response,
-    Node currentNode,
-    Set<PageRef> pagesWithProcedures,
-    PageIndex pageIndex,
-    AnyListContent<?, ?> content,
-    PageRef parentPageRef,
-    Page page
+      ServletContext servletContext,
+      HttpServletRequest request,
+      HttpServletResponse response,
+      Node currentNode,
+      Set<PageRef> pagesWithProcedures,
+      PageIndex pageIndex,
+      AnyListContent<?, ?> content,
+      PageRef parentPageRef,
+      Page page
   ) throws IOException, ServletException {
     final PageRef pageRef = page.getPageRef();
     if (currentNode != null) {
@@ -116,7 +116,7 @@ public final class ProcedureTreeImpl {
     List<Procedure> procedures = new ArrayList<>();
     for (Element element : page.getElements()) {
       if (element instanceof Procedure) {
-        procedures.add((Procedure)element);
+        procedures.add((Procedure) element);
       }
     }
 
@@ -124,8 +124,8 @@ public final class ProcedureTreeImpl {
     //   1) Page has only one procedure
     //   2) The one procedure has same "label" as page "shortTitle"
     boolean mainLinkToProcedure =
-      procedures.size() == 1
-      && procedures.get(0).getLabel().equals(page.getShortTitle())
+        procedures.size() == 1
+            && procedures.get(0).getLabel().equals(page.getShortTitle())
     ;
 
     if (content != null) {
@@ -135,11 +135,11 @@ public final class ProcedureTreeImpl {
       if (index != null) {
         href.append('#');
         URIEncoder.encodeURIComponent(
-          PageIndex.getRefId(
-            index,
-            mainLinkToProcedure ? procedures.get(0).getId() : null
-          ),
-          href
+            PageIndex.getRefId(
+                index,
+                mainLinkToProcedure ? procedures.get(0).getId() : null
+            ),
+            href
         );
       } else {
         URIEncoder.encodeURI(request.getContextPath(), href);
@@ -151,16 +151,16 @@ public final class ProcedureTreeImpl {
       }
       content.li__any(li -> {
         li.a()
-          .clazz(mainLinkToProcedure ? semanticCMS.getLinkCssClass(procedures.get(0)) : null)
-          .href(response.encodeURL(href.toString()))
-        .__(a -> {
-          a.text(PageUtils.getShortTitle(parentPageRef, page));
-          if (index != null) {
-            a.sup__any(sup -> sup
-              .text('[').text(index + 1).text(']')
-            );
-          }
-        });
+            .clazz(mainLinkToProcedure ? semanticCMS.getLinkCssClass(procedures.get(0)) : null)
+            .href(response.encodeURL(href.toString()))
+            .__(a -> {
+              a.text(PageUtils.getShortTitle(parentPageRef, page));
+              if (index != null) {
+                a.sup__any(sup -> sup
+                        .text('[').text(index + 1).text(']')
+                );
+              }
+            });
         if (!mainLinkToProcedure) {
           if (!procedures.isEmpty()) {
             for (Procedure procedure : procedures) {
@@ -168,11 +168,11 @@ public final class ProcedureTreeImpl {
               if (index != null) {
                 href.append('#');
                 URIEncoder.encodeURIComponent(
-                  PageIndex.getRefId(
-                    index,
-                    procedure.getId()
-                  ),
-                  href
+                    PageIndex.getRefId(
+                        index,
+                        procedure.getId()
+                    ),
+                    href
                 );
               } else {
                 URIEncoder.encodeURI(request.getContextPath(), href);
@@ -181,24 +181,24 @@ public final class ProcedureTreeImpl {
                 URIEncoder.encodeURIComponent(procedure.getId(), href);
               }
               li.div__any(div -> div
-                .a()
-                  .clazz(semanticCMS.getLinkCssClass(procedure))
-                  .href(response.encodeURL(href.toString()))
-                .__(a -> {
-                  a.text(procedure);
-                  if (index != null) {
-                    a.sup__any(sup -> sup
-                      .text('[').text(index + 1).text(']')
-                    );
-                  }
-                })
+                      .a()
+                      .clazz(semanticCMS.getLinkCssClass(procedure))
+                      .href(response.encodeURL(href.toString()))
+                      .__(a -> {
+                        a.text(procedure);
+                        if (index != null) {
+                          a.sup__any(sup -> sup
+                                  .text('[').text(index + 1).text(']')
+                          );
+                        }
+                      })
               );
             }
           }
         }
         List<ChildRef> childRefs = NavigationTreeImpl.filterPages(
-          page.getChildRefs(),
-          pagesWithProcedures
+            page.getChildRefs(),
+            pagesWithProcedures
         );
         if (!childRefs.isEmpty()) {
           li.ul__any(ul -> {
@@ -206,7 +206,7 @@ public final class ProcedureTreeImpl {
             for (ChildRef childRef : childRefs) {
               PageRef childPageRef = childRef.getPageRef();
               assert childPageRef.getBook() != null
-                : "pagesWithProcedures does not contain anything from missing books";
+                  : "pagesWithProcedures does not contain anything from missing books";
               Page child = CapturePage.capturePage(servletContext, request, response, childPageRef, CaptureLevel.META);
               writePage(servletContext, request, response, currentNode, pagesWithProcedures, pageIndex, ul, pageRef, child);
             }
@@ -215,15 +215,15 @@ public final class ProcedureTreeImpl {
       });
     } else {
       List<ChildRef> childRefs = NavigationTreeImpl.filterPages(
-        page.getChildRefs(),
-        pagesWithProcedures
+          page.getChildRefs(),
+          pagesWithProcedures
       );
       if (!childRefs.isEmpty()) {
         // TODO: traversal
         for (ChildRef childRef : childRefs) {
           PageRef childPageRef = childRef.getPageRef();
           assert childPageRef.getBook() != null
-            : "pagesWithProcedures does not contain anything from missing books";
+              : "pagesWithProcedures does not contain anything from missing books";
           Page child = CapturePage.capturePage(servletContext, request, response, childPageRef, CaptureLevel.META);
           writePage(servletContext, request, response, currentNode, pagesWithProcedures, pageIndex, null, pageRef, child);
         }
@@ -235,19 +235,19 @@ public final class ProcedureTreeImpl {
    * @param content  optional, null if no output needs to be written
    */
   public static void writeProcedureTree(
-    ServletContext servletContext,
-    HttpServletRequest request,
-    HttpServletResponse response,
-    AnyPalpableContent<?, ?> content,
-    Page root
+      ServletContext servletContext,
+      HttpServletRequest request,
+      HttpServletResponse response,
+      AnyPalpableContent<?, ?> content,
+      Page root
   ) throws ServletException, IOException {
     writeProcedureTree(
-      servletContext,
-      null,
-      request,
-      response,
-      content,
-      root
+        servletContext,
+        null,
+        request,
+        response,
+        content,
+        root
     );
   }
 
@@ -256,12 +256,12 @@ public final class ProcedureTreeImpl {
    * @param root  either Page of ValueExpression that returns Page
    */
   public static void writeProcedureTree(
-    ServletContext servletContext,
-    ELContext elContext,
-    HttpServletRequest request,
-    HttpServletResponse response,
-    AnyPalpableContent<?, ?> content,
-    Object root
+      ServletContext servletContext,
+      ELContext elContext,
+      HttpServletRequest request,
+      HttpServletResponse response,
+      AnyPalpableContent<?, ?> content,
+      Object root
   ) throws ServletException, IOException {
     // Get the current capture state
     final CaptureLevel captureLevel = CaptureLevel.getCaptureLevel(request);
@@ -278,27 +278,27 @@ public final class ProcedureTreeImpl {
 
       if (content != null) {
         content.ul__any(ul -> writePage(
-          servletContext,
-          request,
-          response,
-          currentNode,
-          pagesWithProcedures,
-          pageIndex,
-          ul,
-          null,
-          rootPage
+            servletContext,
+            request,
+            response,
+            currentNode,
+            pagesWithProcedures,
+            pageIndex,
+            ul,
+            null,
+            rootPage
         ));
       } else {
         writePage(
-          servletContext,
-          request,
-          response,
-          currentNode,
-          pagesWithProcedures,
-          pageIndex,
-          null,
-          null,
-          rootPage
+            servletContext,
+            request,
+            response,
+            currentNode,
+            pagesWithProcedures,
+            pageIndex,
+            null,
+            null,
+            rootPage
         );
       }
     }

@@ -56,25 +56,25 @@ public final class ProcedureImpl {
         .clazz("ao-grid", "pragmatickm-procedure")
         .style(style)
         .__(table -> table
-                .thead__any(thead -> thead
-                        .tr__any(tr -> tr
-                                .th__any(th -> th
-                                        .div__(procedure)
-                                )
-                        )
+            .thead__any(thead -> thead
+                .tr__any(tr -> tr
+                    .th__any(th -> th
+                        .div__(procedure)
+                    )
                 )
-                .tbody__any(tbody -> {
-                  BufferResult body = procedure.getBody();
-                  if (body.getLength() > 0) {
-                    tbody.tr__any(tr -> tr
-                            .td__any(td -> {
-                              @SuppressWarnings("deprecation")
-                              Writer unsafe = td.getRawUnsafe();
-                              body.writeTo(new NodeBodyWriter(procedure, unsafe, context));
-                            })
-                    );
-                  }
-                })
+            )
+            .tbody__any(tbody -> {
+              BufferResult body = procedure.getBody();
+              if (body.getLength() > 0) {
+                tbody.tr__any(tr -> tr
+                    .td__any(td -> {
+                      @SuppressWarnings("deprecation")
+                      Writer unsafe = td.getRawUnsafe();
+                      body.writeTo(new NodeBodyWriter(procedure, unsafe, context));
+                    })
+                );
+              }
+            })
         );
   }
 }

@@ -23,10 +23,11 @@
 
 package com.pragmatickm.procedure.servlet.impl;
 
+import static com.aoapps.taglib.AttributeUtils.resolveValue;
+
 import com.aoapps.html.any.AnyListContent;
 import com.aoapps.html.any.AnyPalpableContent;
 import com.aoapps.net.URIEncoder;
-import static com.aoapps.taglib.AttributeUtils.resolveValue;
 import com.pragmatickm.procedure.model.Procedure;
 import com.semanticcms.core.model.ChildRef;
 import com.semanticcms.core.model.Element;
@@ -125,11 +126,10 @@ public final class ProcedureTreeImpl {
     //   2) The one procedure has same "label" as page "shortTitle"
     boolean mainLinkToProcedure =
         procedures.size() == 1
-            && procedures.get(0).getLabel().equals(page.getShortTitle())
-    ;
+            && procedures.get(0).getLabel().equals(page.getShortTitle());
 
     if (content != null) {
-      SemanticCMS semanticCMS = SemanticCMS.getInstance(servletContext);
+      SemanticCMS semanticCms = SemanticCMS.getInstance(servletContext);
       Integer index = pageIndex == null ? null : pageIndex.getPageIndex(pageRef);
       StringBuilder href = new StringBuilder();
       if (index != null) {
@@ -151,13 +151,13 @@ public final class ProcedureTreeImpl {
       }
       content.li__any(li -> {
         li.a()
-            .clazz(mainLinkToProcedure ? semanticCMS.getLinkCssClass(procedures.get(0)) : null)
+            .clazz(mainLinkToProcedure ? semanticCms.getLinkCssClass(procedures.get(0)) : null)
             .href(response.encodeURL(href.toString()))
             .__(a -> {
               a.text(PageUtils.getShortTitle(parentPageRef, page));
               if (index != null) {
                 a.sup__any(sup -> sup
-                        .text('[').text(index + 1).text(']')
+                    .text('[').text(index + 1).text(']')
                 );
               }
             });
@@ -181,17 +181,17 @@ public final class ProcedureTreeImpl {
                 URIEncoder.encodeURIComponent(procedure.getId(), href);
               }
               li.div__any(div -> div
-                      .a()
-                      .clazz(semanticCMS.getLinkCssClass(procedure))
-                      .href(response.encodeURL(href.toString()))
-                      .__(a -> {
-                        a.text(procedure);
-                        if (index != null) {
-                          a.sup__any(sup -> sup
-                                  .text('[').text(index + 1).text(']')
-                          );
-                        }
-                      })
+                  .a()
+                  .clazz(semanticCms.getLinkCssClass(procedure))
+                  .href(response.encodeURL(href.toString()))
+                  .__(a -> {
+                    a.text(procedure);
+                    if (index != null) {
+                      a.sup__any(sup -> sup
+                          .text('[').text(index + 1).text(']')
+                      );
+                    }
+                  })
               );
             }
           }

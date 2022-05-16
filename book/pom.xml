@@ -29,7 +29,7 @@ along with pragmatickm-procedure-servlet.  If not, see <https://www.gnu.org/lice
     <relativePath>../../../parent/pom.xml</relativePath>
   </parent>
 
-  <groupId>com.pragmatickm</groupId><artifactId>pragmatickm-procedure-servlet-book</artifactId><version>1.6.1</version>
+  <groupId>com.pragmatickm</groupId><artifactId>pragmatickm-procedure-servlet-book</artifactId><version>1.6.1-POST-SNAPSHOT</version>
   <packaging>bundle</packaging>
 
   <properties>
@@ -76,7 +76,7 @@ along with pragmatickm-procedure-servlet.  If not, see <https://www.gnu.org/lice
     <connection>scm:git:git://github.com/ao-apps/pragmatickm-procedure-servlet.git</connection>
     <developerConnection>scm:git:git@github.com:ao-apps/pragmatickm-procedure-servlet.git</developerConnection>
     <url>https://github.com/ao-apps/pragmatickm-procedure-servlet</url>
-    <tag>pragmatickm-procedure-servlet-book-1.6.1</tag>
+    <tag>HEAD</tag>
   </scm>
 
   <issueManagement>

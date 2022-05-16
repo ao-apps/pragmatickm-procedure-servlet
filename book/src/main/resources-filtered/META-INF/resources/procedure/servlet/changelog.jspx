@@ -37,7 +37,7 @@ along with pragmatickm-procedure-servlet.  If not, see <https://www.gnu.org/lice
     shortTitle="Changelog"
     tocLevels="1"
     datePublished="2017-07-25T18:14:05-05:00"
-    dateModified="2022-03-21T05:50:15-05:00"
+    dateModified="2022-05-15T20:40:33-05:00"
   >
     <c:if test="${fn:endsWith('@{project.version}', '-SNAPSHOT') and !fn:endsWith('@{project.version}', '-POST-SNAPSHOT')}">
       <changelog:release
@@ -50,10 +50,22 @@ along with pragmatickm-procedure-servlet.  If not, see <https://www.gnu.org/lice
       >
         <ul>
           <li>Added <ao:a href="https://semanticcms.com/core/pages/">SemanticCMS Core Pages</ao:a> support.</li>
-          <li>Updated dependencies.</li>
         </ul>
       </changelog:release>
     </c:if>
+
+    <changelog:release
+      projectName="@{documented.name}"
+      version="1.6.1"
+      datePublished="2022-05-15T20:40:33-05:00"
+      groupId="@{project.groupId}"
+      artifactId="@{documented.artifactId}"
+      scmUrl="@{project.scm.url}"
+    >
+      <ul>
+        <li>Updated dependencies.</li>
+      </ul>
+    </changelog:release>
 
     <changelog:release
       projectName="@{documented.name}"

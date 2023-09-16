@@ -39,5 +39,6 @@ along with pragmatickm-procedure-servlet.  If not, see <https://www.gnu.org/lice
     shortTitle="API Docs"
     datePublished="2017-07-25T18:14:05-05:00"
     dateModified="${ao:getLastModified('index.html')}"
+    allowRobots="false"
   />
 </jsp:root>

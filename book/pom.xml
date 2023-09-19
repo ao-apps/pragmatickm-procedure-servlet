@@ -41,6 +41,9 @@ along with pragmatickm-procedure-servlet.  If not, see <https://www.gnu.org/lice
     <documented.artifactId>pragmatickm-procedure-servlet</documented.artifactId>
     <documented.name>PragmaticKM Procedure Servlet</documented.name>
     <documented.description>Procedures nested within SemanticCMS pages and elements in a Servlet environment.</documented.description>
+    <javadoc.breadcrumbs><![CDATA[<a target="${javadoc.target}" href="https://pragmatickm.com/">PragmaticKM</a>
+/ <a target="${javadoc.target}" href="https://pragmatickm.com/procedure/">Procedure</a>
+/ <a target="${javadoc.target}" href="${project.url}">Servlet</a>]]></javadoc.breadcrumbs>
 
     <description.html><![CDATA[Documentation for <a target="${javadoc.target}" href="${project.url}">${documented.name}</a> in <a target="${javadoc.target}" href="https://semanticcms.com/">SemanticCMS</a> format.]]></description.html>
   </properties>

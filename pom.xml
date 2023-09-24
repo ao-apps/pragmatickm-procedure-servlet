@@ -451,11 +451,5 @@ along with pragmatickm-procedure-servlet.  If not, see <https://www.gnu.org/lice
       <groupId>com.aoapps</groupId><artifactId>ao-style</artifactId>
       <scope>runtime</scope>
     </dependency>
-    <!-- Imports (Reactor build order only) -->
-    <dependency>
-      <groupId>com.aoapps</groupId><artifactId>javaee-web-api-bom</artifactId><version>7.0.1-POST-SNAPSHOT</version>
-      <type>pom</type>
-      <exclusions><exclusion><artifactId>*</artifactId><groupId>*</groupId></exclusion></exclusions>
-    </dependency>
   </dependencies>
 </project>

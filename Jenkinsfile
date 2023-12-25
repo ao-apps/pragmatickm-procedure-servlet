@@ -41,6 +41,7 @@ def upstreamProjects = [
   'model', // <groupId>com.pragmatickm</groupId><artifactId>pragmatickm-procedure-model</artifactId>
   '../../semanticcms-1.x/core/model', // <groupId>com.semanticcms</groupId><artifactId>semanticcms-core-model</artifactId>
   '../../semanticcms-1.x/core/servlet', // <groupId>com.semanticcms</groupId><artifactId>semanticcms-core-servlet</artifactId>
+  // No Jenkins: <groupId>com.github.spotbugs</groupId><artifactId>spotbugs-annotations</artifactId>
 
   // Runtime Direct
   '../../oss/style', // <groupId>com.aoapps</groupId><artifactId>ao-style</artifactId>

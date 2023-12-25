@@ -1,6 +1,6 @@
 /*
  * pragmatickm-procedure-servlet - Procedures nested within SemanticCMS pages and elements in a Servlet environment.
- * Copyright (C) 2014, 2015, 2016, 2017, 2020, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2014, 2015, 2016, 2017, 2020, 2021, 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -32,6 +32,7 @@ import com.semanticcms.core.servlet.CurrentPage;
 import com.semanticcms.core.servlet.Element;
 import com.semanticcms.core.servlet.PageContext;
 import com.semanticcms.core.servlet.PageIndex;
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.io.IOException;
 import java.io.Writer;
 import javax.servlet.ServletContext;
@@ -95,6 +96,7 @@ public class Procedure extends Element<com.pragmatickm.procedure.model.Procedure
    *
    * @see  PageContext
    */
+  @SuppressFBWarnings("CT_CONSTRUCTOR_THROW")
   public Procedure(com.pragmatickm.procedure.model.Procedure element) {
     this(
         PageContext.getServletContext(),
@@ -109,6 +111,7 @@ public class Procedure extends Element<com.pragmatickm.procedure.model.Procedure
    *
    * @see  PageContext
    */
+  @SuppressFBWarnings("CT_CONSTRUCTOR_THROW")
   public Procedure() {
     this(
         PageContext.getServletContext(),
@@ -120,6 +123,7 @@ public class Procedure extends Element<com.pragmatickm.procedure.model.Procedure
   /**
    * @see  #Procedure()
    */
+  @SuppressFBWarnings("CT_CONSTRUCTOR_THROW")
   public Procedure(
       com.pragmatickm.procedure.model.Procedure element,
       String label
@@ -131,6 +135,7 @@ public class Procedure extends Element<com.pragmatickm.procedure.model.Procedure
   /**
    * @see  #Procedure()
    */
+  @SuppressFBWarnings("CT_CONSTRUCTOR_THROW")
   public Procedure(String label) {
     this();
     element.setLabel(label);

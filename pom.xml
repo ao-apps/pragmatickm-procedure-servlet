@@ -353,7 +353,7 @@ along with pragmatickm-procedure-servlet.  If not, see <https://www.gnu.org/lice
         <groupId>com.semanticcms</groupId><artifactId>semanticcms-core-servlet</artifactId><version>1.20.0-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
       </dependency>
       <dependency>
-        <groupId>com.github.spotbugs</groupId><artifactId>spotbugs-annotations</artifactId><version>4.8.4</version>
+        <groupId>com.github.spotbugs</groupId><artifactId>spotbugs-annotations</artifactId><version>4.8.5</version>
       </dependency>
       <!-- Transitive -->
       <dependency>

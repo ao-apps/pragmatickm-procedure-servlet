@@ -25,11 +25,11 @@ along with pragmatickm-procedure-servlet.  If not, see <https://www.gnu.org/lice
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>com.pragmatickm</groupId><artifactId>pragmatickm-parent</artifactId><version>2.0.0-SNAPSHOT</version>
+    <groupId>com.pragmatickm</groupId><artifactId>pragmatickm-parent</artifactId><version>3.0.0-SNAPSHOT</version>
     <relativePath>../../parent/pom.xml</relativePath>
   </parent>
 
-  <groupId>com.pragmatickm</groupId><artifactId>pragmatickm-procedure-servlet</artifactId><version>2.0.0-SNAPSHOT</version>
+  <groupId>com.pragmatickm</groupId><artifactId>pragmatickm-procedure-servlet</artifactId><version>3.0.0-SNAPSHOT</version>
   <packaging>jar</packaging>
 
   <properties>
@@ -309,25 +309,25 @@ along with pragmatickm-procedure-servlet.  If not, see <https://www.gnu.org/lice
       <!-- javaee-web-api-bom: <groupId>javax.servlet</groupId><artifactId>javax.servlet-api</artifactId> -->
       <!-- javaee-web-api-bom: <groupId>javax.servlet.jsp</groupId><artifactId>javax.servlet.jsp-api</artifactId> -->
       <dependency>
-        <groupId>com.pragmatickm</groupId><artifactId>pragmatickm-procedure-model</artifactId><version>2.0.0-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
+        <groupId>com.pragmatickm</groupId><artifactId>pragmatickm-procedure-model</artifactId><version>3.0.0-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
       </dependency>
       <dependency>
-        <groupId>com.pragmatickm</groupId><artifactId>pragmatickm-procedure-renderer-html</artifactId><version>2.0.0-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
+        <groupId>com.pragmatickm</groupId><artifactId>pragmatickm-procedure-renderer-html</artifactId><version>3.0.0-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
       </dependency>
       <dependency>
-        <groupId>com.semanticcms</groupId><artifactId>semanticcms-core-model</artifactId><version>2.0.0-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
+        <groupId>com.semanticcms</groupId><artifactId>semanticcms-core-model</artifactId><version>3.0.0-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
       </dependency>
       <dependency>
-        <groupId>com.semanticcms</groupId><artifactId>semanticcms-core-pages</artifactId><version>2.0.0-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
+        <groupId>com.semanticcms</groupId><artifactId>semanticcms-core-pages</artifactId><version>3.0.0-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
       </dependency>
       <dependency>
-        <groupId>com.semanticcms</groupId><artifactId>semanticcms-core-pages-local</artifactId><version>2.0.0-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
+        <groupId>com.semanticcms</groupId><artifactId>semanticcms-core-pages-local</artifactId><version>3.0.0-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
       </dependency>
       <dependency>
-        <groupId>com.semanticcms</groupId><artifactId>semanticcms-core-renderer-html</artifactId><version>2.0.0-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
+        <groupId>com.semanticcms</groupId><artifactId>semanticcms-core-renderer-html</artifactId><version>3.0.0-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
       </dependency>
       <dependency>
-        <groupId>com.semanticcms</groupId><artifactId>semanticcms-core-servlet</artifactId><version>2.0.0-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
+        <groupId>com.semanticcms</groupId><artifactId>semanticcms-core-servlet</artifactId><version>3.0.0-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
       </dependency>
       <dependency>
         <groupId>com.github.spotbugs</groupId><artifactId>spotbugs-annotations</artifactId><version>4.9.8</version>
@@ -398,16 +398,16 @@ along with pragmatickm-procedure-servlet.  If not, see <https://www.gnu.org/lice
         <groupId>joda-time</groupId><artifactId>joda-time</artifactId><version>2.14.0</version>
       </dependency>
       <dependency>
-        <groupId>com.semanticcms</groupId><artifactId>semanticcms-core-controller</artifactId><version>2.0.0-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
+        <groupId>com.semanticcms</groupId><artifactId>semanticcms-core-controller</artifactId><version>3.0.0-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
       </dependency>
       <dependency>
-        <groupId>com.semanticcms</groupId><artifactId>semanticcms-core-renderer</artifactId><version>2.0.0-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
+        <groupId>com.semanticcms</groupId><artifactId>semanticcms-core-renderer</artifactId><version>3.0.0-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
       </dependency>
       <dependency>
-        <groupId>com.semanticcms</groupId><artifactId>semanticcms-core-renderer-servlet</artifactId><version>2.0.0-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
+        <groupId>com.semanticcms</groupId><artifactId>semanticcms-core-renderer-servlet</artifactId><version>3.0.0-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
       </dependency>
       <dependency>
-        <groupId>com.semanticcms</groupId><artifactId>semanticcms-core-resources</artifactId><version>2.0.0-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
+        <groupId>com.semanticcms</groupId><artifactId>semanticcms-core-resources</artifactId><version>3.0.0-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
       </dependency>
       <!-- Runtime Transitive -->
       <dependency>

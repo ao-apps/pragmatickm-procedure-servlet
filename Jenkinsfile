@@ -39,8 +39,8 @@ def upstreamProjects = [
   // No Jenkins: <groupId>javax.servlet</groupId><artifactId>javax.servlet-api</artifactId>
   // No Jenkins: <groupId>javax.servlet.jsp</groupId><artifactId>javax.servlet.jsp-api</artifactId>
   'model', // <groupId>com.pragmatickm</groupId><artifactId>pragmatickm-procedure-model</artifactId>
-  '../../semanticcms-1.x/core/model', // <groupId>com.semanticcms</groupId><artifactId>semanticcms-core-model</artifactId>
-  '../../semanticcms-1.x/core/servlet', // <groupId>com.semanticcms</groupId><artifactId>semanticcms-core-servlet</artifactId>
+  '../../semanticcms-2.x/core/model', // <groupId>com.semanticcms</groupId><artifactId>semanticcms-core-model</artifactId>
+  '../../semanticcms-2.x/core/servlet', // <groupId>com.semanticcms</groupId><artifactId>semanticcms-core-servlet</artifactId>
   // No Jenkins: <groupId>com.github.spotbugs</groupId><artifactId>spotbugs-annotations</artifactId>
 
   // Runtime Direct

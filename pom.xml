@@ -25,11 +25,11 @@ along with pragmatickm-procedure-servlet.  If not, see <https://www.gnu.org/lice
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>com.pragmatickm</groupId><artifactId>pragmatickm-parent</artifactId><version>1.19.0-SNAPSHOT</version>
+    <groupId>com.pragmatickm</groupId><artifactId>pragmatickm-parent</artifactId><version>2.0.0-SNAPSHOT</version>
     <relativePath>../../parent/pom.xml</relativePath>
   </parent>
 
-  <groupId>com.pragmatickm</groupId><artifactId>pragmatickm-procedure-servlet</artifactId><version>1.6.1-POST-SNAPSHOT</version>
+  <groupId>com.pragmatickm</groupId><artifactId>pragmatickm-procedure-servlet</artifactId><version>2.0.0-SNAPSHOT</version>
   <packaging>jar</packaging>
 
   <properties>
@@ -87,7 +87,7 @@ along with pragmatickm-procedure-servlet.  If not, see <https://www.gnu.org/lice
 
   <ciManagement>
     <system>Jenkins</system>
-    <url>https://jenkins.aoindustries.com/job/ao/job/pragmatickm-1.x/job/procedure/job/servlet/</url>
+    <url>https://jenkins.aoindustries.com/job/ao/job/pragmatickm-2.x/job/procedure/job/servlet/</url>
   </ciManagement>
   <!-- Only one allowed in POM:
   <ciManagement>
@@ -344,13 +344,13 @@ along with pragmatickm-procedure-servlet.  If not, see <https://www.gnu.org/lice
       <!-- javaee-web-api-bom: <groupId>javax.servlet</groupId><artifactId>javax.servlet-api</artifactId> -->
       <!-- javaee-web-api-bom: <groupId>javax.servlet.jsp</groupId><artifactId>javax.servlet.jsp-api</artifactId> -->
       <dependency>
-        <groupId>com.pragmatickm</groupId><artifactId>pragmatickm-procedure-model</artifactId><version>1.5.0${POST-SNAPSHOT}</version>
+        <groupId>com.pragmatickm</groupId><artifactId>pragmatickm-procedure-model</artifactId><version>2.0.0-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
       </dependency>
       <dependency>
-        <groupId>com.semanticcms</groupId><artifactId>semanticcms-core-model</artifactId><version>1.14.1${POST-SNAPSHOT}</version>
+        <groupId>com.semanticcms</groupId><artifactId>semanticcms-core-model</artifactId><version>2.0.0-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
       </dependency>
       <dependency>
-        <groupId>com.semanticcms</groupId><artifactId>semanticcms-core-servlet</artifactId><version>1.21.0-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
+        <groupId>com.semanticcms</groupId><artifactId>semanticcms-core-servlet</artifactId><version>2.0.0-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
       </dependency>
       <dependency>
         <groupId>com.github.spotbugs</groupId><artifactId>spotbugs-annotations</artifactId><version>4.9.8</version>

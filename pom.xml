@@ -148,8 +148,8 @@ along with pragmatickm-procedure-servlet.  If not, see <https://www.gnu.org/lice
                       <includes>element-list, package-list</includes>
                       <outputDirectory>${project.build.directory}/offlineLinks/com.aoapps/ao-fluent-html-servlet</outputDirectory>
                     </artifactItem>
-                    <!-- ao-javadoc-offline: <groupId>javax.servlet</groupId><artifactId>javax.servlet-api</artifactId><classifier>javadoc</classifier> -->
-                    <!-- ao-javadoc-offline: <groupId>javax.servlet.jsp</groupId><artifactId>javax.servlet.jsp-api</artifactId><classifier>javadoc</classifier> -->
+                    <!-- ao-javadoc-offline: <groupId>jakarta.servlet</groupId><artifactId>jakarta.servlet-api</artifactId><classifier>javadoc</classifier> -->
+                    <!-- ao-javadoc-offline: <groupId>jakarta.servlet.jsp</groupId><artifactId>jakarta.servlet.jsp-api</artifactId><classifier>javadoc</classifier> -->
                     <artifactItem>
                       <groupId>com.pragmatickm</groupId><artifactId>pragmatickm-procedure-model</artifactId><classifier>javadoc</classifier>
                       <includes>element-list, package-list</includes>
@@ -208,8 +208,8 @@ along with pragmatickm-procedure-servlet.  If not, see <https://www.gnu.org/lice
                   <url>https://oss.aoapps.com/fluent-html/servlet/apidocs/</url>
                   <location>${project.build.directory}/offlineLinks/com.aoapps/ao-fluent-html-servlet</location>
                 </offlineLink>
-                <!-- ao-javadoc-offline: <groupId>javax.servlet</groupId><artifactId>javax.servlet-api</artifactId><classifier>javadoc</classifier> -->
-                <!-- ao-javadoc-offline: <groupId>javax.servlet.jsp</groupId><artifactId>javax.servlet.jsp-api</artifactId><classifier>javadoc</classifier> -->
+                <!-- ao-javadoc-offline: <groupId>jakarta.servlet</groupId><artifactId>jakarta.servlet-api</artifactId><classifier>javadoc</classifier> -->
+                <!-- ao-javadoc-offline: <groupId>jakarta.servlet.jsp</groupId><artifactId>jakarta.servlet.jsp-api</artifactId><classifier>javadoc</classifier> -->
                 <offlineLink>
                   <url>https://pragmatickm.com/procedure/model/apidocs/</url>
                   <location>${project.build.directory}/offlineLinks/com.pragmatickm/pragmatickm-procedure-model</location>
@@ -278,9 +278,6 @@ along with pragmatickm-procedure-servlet.  If not, see <https://www.gnu.org/lice
                 <!--
                   Releases use "Automatic-Module-Name" instead of "module-info.java"
                   since has direct dependencies that are not yet modularized:
-                  javax.el-api-3.0.0.jar
-                  javax.servlet-api-3.1.0.jar
-                  javax.servlet.jsp-api-2.3.3.jar
                   jsr305-3.0.2.jar
                 -->
                 <Automatic-Module-Name>${module.name}</Automatic-Module-Name>
@@ -310,8 +307,8 @@ along with pragmatickm-procedure-servlet.  If not, see <https://www.gnu.org/lice
       <dependency>
         <groupId>com.aoapps</groupId><artifactId>ao-fluent-html-servlet</artifactId><version>0.9.0-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
       </dependency>
-      <!-- javaee-web-api-bom: <groupId>javax.servlet</groupId><artifactId>javax.servlet-api</artifactId> -->
-      <!-- javaee-web-api-bom: <groupId>javax.servlet.jsp</groupId><artifactId>javax.servlet.jsp-api</artifactId> -->
+      <!-- jakartaee-web-profile-bom: <groupId>jakarta.servlet</groupId><artifactId>jakarta.servlet-api</artifactId> -->
+      <!-- jakartaee-web-profile-bom: <groupId>jakarta.servlet.jsp</groupId><artifactId>jakarta.servlet.jsp-api</artifactId> -->
       <dependency>
         <groupId>com.pragmatickm</groupId><artifactId>pragmatickm-procedure-model</artifactId><version>3.0.0-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
       </dependency>
@@ -397,7 +394,7 @@ along with pragmatickm-procedure-servlet.  If not, see <https://www.gnu.org/lice
       <dependency>
         <groupId>org.apache.commons</groupId><artifactId>commons-lang3</artifactId><version>3.20.0</version>
       </dependency>
-      <!-- javaee-web-api-bom: <groupId>javax.el</groupId><artifactId>javax.el-api</artifactId> -->
+      <!-- jakartaee-web-profile-bom: <groupId>jakarta.el</groupId><artifactId>jakarta.el-api</artifactId> -->
       <dependency>
         <groupId>com.semanticcms</groupId><artifactId>semanticcms-core-controller</artifactId><version>3.0.0-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
       </dependency>
@@ -416,7 +413,7 @@ along with pragmatickm-procedure-servlet.  If not, see <https://www.gnu.org/lice
       </dependency>
       <!-- Imports -->
       <dependency>
-        <groupId>com.aoapps</groupId><artifactId>javaee-web-api-bom</artifactId><version>7.0.1-POST-SNAPSHOT</version>
+        <groupId>com.aoapps</groupId><artifactId>jakartaee-web-profile-bom</artifactId><version>10.0.0-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -432,10 +429,10 @@ along with pragmatickm-procedure-servlet.  If not, see <https://www.gnu.org/lice
       <groupId>com.aoapps</groupId><artifactId>ao-fluent-html-servlet</artifactId>
     </dependency>
     <dependency>
-      <groupId>javax.servlet</groupId><artifactId>javax.servlet-api</artifactId>
+      <groupId>jakarta.servlet</groupId><artifactId>jakarta.servlet-api</artifactId>
     </dependency>
     <dependency>
-      <groupId>javax.servlet.jsp</groupId><artifactId>javax.servlet.jsp-api</artifactId>
+      <groupId>jakarta.servlet.jsp</groupId><artifactId>jakarta.servlet.jsp-api</artifactId>
     </dependency>
     <dependency>
       <groupId>com.pragmatickm</groupId><artifactId>pragmatickm-procedure-model</artifactId>

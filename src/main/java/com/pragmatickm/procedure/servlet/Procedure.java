@@ -119,7 +119,7 @@ public class Procedure extends Element<com.pragmatickm.procedure.model.Procedure
   }
 
   /**
-   * @see  #Procedure()
+   * @see  Procedure#Procedure()
    */
   @SuppressFBWarnings("CT_CONSTRUCTOR_THROW")
   public Procedure(
@@ -131,7 +131,7 @@ public class Procedure extends Element<com.pragmatickm.procedure.model.Procedure
   }
 
   /**
-   * @see  #Procedure()
+   * @see  Procedure#Procedure()
    */
   @SuppressFBWarnings("CT_CONSTRUCTOR_THROW")
   public Procedure(String label) {

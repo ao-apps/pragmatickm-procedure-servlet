@@ -29,12 +29,12 @@ along with pragmatickm-procedure-servlet.  If not, see <https://www.gnu.org/lice
     <relativePath>../../../parent/pom.xml</relativePath>
   </parent>
 
-  <groupId>com.pragmatickm</groupId><artifactId>pragmatickm-procedure-servlet-book</artifactId><version>2.0.0</version>
+  <groupId>com.pragmatickm</groupId><artifactId>pragmatickm-procedure-servlet-book</artifactId><version>2.0.0-POST-SNAPSHOT</version>
   <packaging>jar</packaging>
 
   <properties>
     <!-- Must be set to ${git.commit.time} for snapshots or ISO 8601 timestamp for releases. -->
-    <project.build.outputTimestamp>2026-02-10T16:58:00Z</project.build.outputTimestamp>
+    <project.build.outputTimestamp>${git.commit.time}</project.build.outputTimestamp>
     <module.name>com.pragmatickm.procedure.servlet.book</module.name>
     <subproject.subpath>book/</subproject.subpath>
     <!-- These values are copied from the project being documented -->
@@ -82,7 +82,7 @@ along with pragmatickm-procedure-servlet.  If not, see <https://www.gnu.org/lice
     <connection>scm:git:git://github.com/ao-apps/pragmatickm-procedure-servlet.git</connection>
     <developerConnection>scm:git:git@github.com:ao-apps/pragmatickm-procedure-servlet.git</developerConnection>
     <url>https://github.com/ao-apps/pragmatickm-procedure-servlet</url>
-    <tag>pragmatickm-procedure-servlet-book-2.0.0</tag>
+    <tag>HEAD</tag>
   </scm>
 
   <issueManagement>

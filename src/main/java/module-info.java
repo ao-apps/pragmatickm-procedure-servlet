@@ -21,8 +21,6 @@
  * along with pragmatickm-procedure-servlet.  If not, see <https://www.gnu.org/licenses/>.
  */
 module com.pragmatickm.procedure.servlet {
-  exports com.pragmatickm.procedure.servlet;
-  exports com.pragmatickm.procedure.servlet.impl;
   // Direct
   requires com.aoapps.encoding; // <groupId>com.aoapps</groupId><artifactId>ao-encoding</artifactId>
   requires com.aoapps.html.any; // <groupId>com.aoapps</groupId><artifactId>ao-fluent-html-any</artifactId>
@@ -38,4 +36,7 @@ module com.pragmatickm.procedure.servlet {
   requires com.semanticcms.core.model; // <groupId>com.semanticcms</groupId><artifactId>semanticcms-core-model</artifactId>
   requires com.semanticcms.core.servlet; // <groupId>com.semanticcms</groupId><artifactId>semanticcms-core-servlet</artifactId>
   requires static com.github.spotbugs.annotations; // <groupId>com.github.spotbugs</groupId><artifactId>spotbugs-annotations</artifactId>
+
+  exports com.pragmatickm.procedure.servlet;
+  exports com.pragmatickm.procedure.servlet.impl;
 }
